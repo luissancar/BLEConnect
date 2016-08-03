@@ -17,13 +17,13 @@ All you need to implement this is found here:
 ![Connecting process](assets/BLE-Connect.png)
 
 ####Komoot App
-The user will activate the BLE Connect feature inside the komoot app settings. When doing so, the app will start advertising the komoot navigation BLE service and will tell the user to start pairing via their external BLE device. 
+The user activates BLE Connect inside the komoot app settings. When doing so, the app starts advertising the komoot navigation BLE service and tells the user to start pairing via their external BLE device. 
 The komoot app stops advertising once the connection to the characteristic is established.
 
 ####Your device / what you implement
-The external BLE device is responsible for establishing the connection and subscribing to the komoot navigation service characteristic. Your device should search for the komoot navigation service (UUID defined below). Otherwise it might be possible that you won’t find the komoot app while the app is in background (not visible).
+The external BLE device is responsible to establish the connection and subscribing to the komoot navigation service characteristic. Your device should search for the komoot navigation service (UUID defined below). Otherwise it might be possible that you won’t find the komoot app while the app is in background (not visible).
 
-**Please note**: The advertisement data will look differently while the app is running in the background. For details please check [Apple developer documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html#//apple_ref/doc/uid/TP40013257-CH7-SW1).
+**Please note**: The advertisement data is different while the app is running in background. For details please check [Apple developer documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html#//apple_ref/doc/uid/TP40013257-CH7-SW1).
 
 
 
@@ -57,7 +57,7 @@ KomootAppSimulator simulates the behavior of the komoot app.
 
 ![BLE device simulator](assets/BLEDeviceSimulator.png)
 
-BLEDeviceSimulating simulates a BLE device that receives the BLE Navigation Service. 
+BLEDeviceSimulator simulates a BLE device that receives the BLE Navigation Service. 
 
 Just clone the repository and open the Xcode Project to start the simulators on your iOS device.
 
@@ -89,7 +89,7 @@ UUID to identify a single navigation instruction. Use this identifier for sendin
 
 The direction will be represented as an UInt8 value. The following list shows the mapping between the image and the corresponding UInt8 value. This list could be extended in future.
 
-You can download the Arrows [here](assets/nav-icons/navigationArrows.zip) or make your own design.
+You can download the arrows [here](assets/nav-icons/navigationArrows.zip) or make your own design.
 
 
 | Direction | Number value  | Description |
@@ -134,7 +134,7 @@ You can download the Arrows [here](assets/nav-icons/navigationArrows.zip) or mak
 
 The distance is provided in meters. There is no rounding done by the komoot app. Your implementation is responsible to round and convert into the right measurement system. 
 
-This is an example how we do rounding in the komoot App:
+This is an example how we do rounding in the komoot app:
 
 | Distance Range | Rounding step | Example |
 |---|---|---|
