@@ -1,0 +1,6 @@
+framework module Pods_KomootAppSimulator {
+  umbrella header "Pods-KomootAppSimulator-umbrella.h"
+
+  export *
+  module * { export * }
+}
