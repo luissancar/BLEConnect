@@ -2,16 +2,17 @@
 
 ##BLEConnect
 
-With komoot BLE Connect, you can enable your BLE device to show navigation instructions for cycling, running and outdoor routes [Link detailed description](https://www.komoot.de/partner/connect).
+With komoot BLE Connect, you can enable your BLE device to show navigation instructions for cycling, running and outdoor routes. [https://www.komoot.de/partner/connect](https://www.komoot.de/partner/connect)
 
 All you need to implement this is found here:
 
-- A description with all necessary details is found below. It tells you what the komoot app does, and what you should implement. ([How it works](#headerHowItWorks))
-- We also provide two helpful iOS Apps for developers ([The Simulator Apps](#headerSimulatorApps)). The first app simulates the komoot App behavior as sender (BLE Peripheral). The second app simulates your BLE device as central receiving the directions of navigation (BLE Central). You can clone the repository with the apps’ source code and run them on your iOS device.
-- [BLE service specification](#headerBLESpecification)
-- [Description of transferred data](#headerData)  
+- [How it works](#headerHowItWorks)
+- [The Simulator Apps](#headerSimulatorApps)
+- [BLE Service Specification](#headerBLESpecification)
+- [Transferred data](#headerData)  
 
-##How it works<a name="headerHowItWorks"></a>
+<a name="headerHowItWorks"></a>
+##How it works
 
 ###Connect to komoot App
 ![Connecting process](assets/BLE-Connect.png)
@@ -44,48 +45,44 @@ The komoot app repeats the last navigation instruction every 2 seconds (might be
 ####Your device / what you implement
 You have to start the scanning for the navigation service once you detect the connection to the peripheral got lost. After a few seconds, the komoot app will start the advertising.
 
+<a name="headerSimulatorApps"></a>
+##The Simulator Apps
 
-##The Simulator Apps<a name="headerSimulatorApps"></a>
+To make development easier for you, we created two simulator apps you can find in this repository. Just clone the repository and open the Xcode Project to start the simulators on your iOS device.
 
+| KomootAppSimulator | BLEDeviceSimulator |
+|:---:|:---:|
+| <img src="assets/KomootAppSimulator.png" width="200" /> | <img src="assets/BLEDeviceSimulator.png" width="200" /> |
+| Simulates the behavior of the komoot app. (BLE Peripheral) | Simulates a BLE device that receives the BLE Navigation Service. (BLE Central) |
 
-
-To make development easier for you, we created two simulator apps you can find in this repository.
-
-![Komoot app simulator](assets/KomootAppSimulator.png)
-
-KomootAppSimulator simulates the behavior of the komoot app.
-
-![BLE device simulator](assets/BLEDeviceSimulator.png)
-
-BLEDeviceSimulator simulates a BLE device that receives the BLE Navigation Service. 
-
-Just clone the repository and open the Xcode Project to start the simulators on your iOS device.
-
-
-##BLE Service Specification<a name="headerBLESpecification"></a>
+<a name="headerBLESpecification"></a>
+##BLE Service Specification
 
 | UUID | Description  | Access  |
 |---|---|---|
 |71C1E128-D92F-4FA8-A2B2-0F171DB3436C|GATT Primary Service Declaration|Readonly|
 |503DD605-9BCB-4F6E-B235-270A57483026|GATT Characteristic to subscribe for navigation updates|Notify, Readonly|
 
-##Transferred Data<a name="headerData"></a>
+<a name="headerData"></a>
+##Transferred Data
 When you read the GATT characteristic after you got notified, you will receive the following data.
 
 ![Data structure](assets/BLE-Data.png)
 
-- Identifier (UUID)
-- Direction Arrow (UInt8)
-- Distance (UInt32)
-- Street (UTF8-String)
+- [Identifier](#data_identifier) (UUID)
+- [Direction Arrow](#data_directionArrows) (UInt8)
+- [Distance](#data_distance) (UInt32)
+- [Street](#data_street) (UTF8-String)
 
+<a name="data_identifier"></a>
 ###Identifier
 
 UUID to identify a single navigation instruction. Use this identifier for sending the read request to the characteristic. If we get a read request without this identifier, we will deliver the last data object.
 
+<a name="data_directionArrows"></a>
 ### Direction Arrows
 
-![Direction arrows](assets/directions.jpg)
+<img src="assets/directions.jpg" width="300" />
 
 The direction will be represented as an UInt8 value. The following list shows the mapping between the image and the corresponding UInt8 value. This list could be extended in future.
 
@@ -127,9 +124,10 @@ You can download the arrows [here](assets/nav-icons/navigationArrows.zip) or mak
 |![left route](assets/nav-icons/ic_nav_outof_route.png)|30|Out of route|
 |No image|31…n|We might enhance the table in future versions.|
 
+<a name="data_distance"></a>
 ###Distance
 
-![Distance](assets/distance.jpg)
+<img src="assets/distance.jpg" width="300" />
 
 
 The distance is provided in meters. There is no rounding done by the komoot app. Your implementation is responsible to round and convert into the right measurement system. 
@@ -141,8 +139,8 @@ This is an example how we do rounding in the komoot app:
 |0 - 5|0|Now|
 |6 - *|10|14 -> 10|
 
+<a name="data_street"></a>
 ###Street
-
-![Street](assets/street.jpg)
+<img src="assets/street.jpg" width="300" />
 
 The street is provided as UTF-8 string. The street is starting at byte 21 until the end of the data object.
