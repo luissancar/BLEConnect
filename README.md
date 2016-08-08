@@ -71,8 +71,8 @@ When you read the GATT characteristic after you got notified, you will receive t
 
 - [Identifier](#data_identifier) (UUID)
 - [Direction Arrow](#data_directionArrows) (UInt8)
-- [Distance](#data_distance) (UInt32)
 - [Street](#data_street) (UTF8-String)
+- [Distance](#data_distance) (UInt32)
 
 <a name="data_identifier"></a>
 ###Identifier
@@ -124,6 +124,13 @@ You can download the arrows [here](assets/nav-icons/navigationArrows.zip) or mak
 |![left route](assets/nav-icons/ic_nav_outof_route.png)|30|Out of route|
 |No image|31…n|We might enhance the table in future versions.|
 
+<a name="data_street"></a>
+###Street
+<img src="assets/street.jpg" width="300" />
+
+The street is provided as UTF-8 string. The street is starting at byte 21 until the end of the data object.
+
+
 <a name="data_distance"></a>
 ###Distance
 
@@ -139,8 +146,3 @@ This is an example how we do rounding in the komoot app:
 |0 - 5|0|Now|
 |6 - *|10|14 -> 10|
 
-<a name="data_street"></a>
-###Street
-<img src="assets/street.jpg" width="300" />
-
-The street is provided as UTF-8 string. The street is starting at byte 21 until the end of the data object.
