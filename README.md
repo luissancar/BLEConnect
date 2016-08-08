@@ -71,7 +71,7 @@ When you read the GATT characteristic after you got notified, you will receive t
 
 - [Identifier](#data_identifier) (UUID)
 - [Direction Arrow](#data_directionArrows) (UInt8)
-- [Street](#data_street) (UTF8-String)
+- [Street](#data_street) (UTF8 string)
 - [Distance](#data_distance) (UInt32)
 
 <a name="data_identifier"></a>
@@ -95,31 +95,31 @@ You can download the arrows [here](assets/nav-icons/navigationArrows.zip) or mak
 |![straight](assets/nav-icons/ic_nav_arrow_keep_going.png)|1|Go Straight|
 |![start](assets/nav-icons/ic_nav_arrow_start.png)|2|Start|
 |![finish](assets/nav-icons/ic_nav_arrow_finish.png)|3|Finish|
-|![slight left](assets/nav-icons/ic_nav_arrow_keep_left.png)|4|Slight left|
+|![slight left](assets/nav-icons/ic_nav_arrow_keep_left.png)|4|Slight Left|
 |![left](assets/nav-icons/ic_nav_arrow_turn_left.png)|5|Left|
-|![sharp left](assets/nav-icons/ic_nav_arrow_turn_hard_left.png)|6|sharp left|
-|![sharp right](assets/nav-icons/ic_nav_arrow_turn_hard_right.png)|7|sharp right|
-|![right](assets/nav-icons/ic_nav_arrow_turn_right.png)|8|right|
-|![slight right](assets/nav-icons/ic_nav_arrow_keep_right.png)|9|Slight right|
-|![fork right](assets/nav-icons/ic_nav_arrow_fork_right.png)|10|Fork right|
-|![fork left](assets/nav-icons/ic_nav_arrow_fork_left.png)|11|Fork left|
+|![sharp left](assets/nav-icons/ic_nav_arrow_turn_hard_left.png)|6|Sharp Left|
+|![sharp right](assets/nav-icons/ic_nav_arrow_turn_hard_right.png)|7|Sharp Right|
+|![right](assets/nav-icons/ic_nav_arrow_turn_right.png)|8|Right|
+|![slight right](assets/nav-icons/ic_nav_arrow_keep_right.png)|9|Slight Right|
+|![fork right](assets/nav-icons/ic_nav_arrow_fork_right.png)|10|Fork Right|
+|![fork left](assets/nav-icons/ic_nav_arrow_fork_left.png)|11|Fork Left|
 |![u-turn](assets/nav-icons/ic_nav_arrow_uturn.png)|12|U-Turn|
 |No image|13|Reserved|
 |No image|14|Reserved|
-|![roundabout exit left](assets/nav-icons/ic_nav_roundabout_exit_cw.png)|15|Roundabout exit left|
-|![roundabout exit right](assets/nav-icons/ic_nav_roundabout_exit_ccw.png)|16|Roundabout exit right|
-|![roundabout CCW exit 1-1](assets/nav-icons/ic_nav_roundabout_ccw1_1.png)|17|Roundabout counter clockwise exit 1 of 1|
-|![roundabout CCW exit 1-2](assets/nav-icons/ic_nav_roundabout_ccw1_2.png)|18|Roundabout counter clockwise exit 1 of 2|
-|![roundabout CCW exit 1-3](assets/nav-icons/ic_nav_roundabout_ccw1_3.png)|19|Roundabout counter clockwise exit 1 of 3|
-|![roundabout CCW exit 2-2](assets/nav-icons/ic_nav_roundabout_ccw2_2.png)|20|Roundabout counter clockwise exit 2 of 2|
-|![roundabout CCW exit 2-3](assets/nav-icons/ic_nav_roundabout_ccw2_3.png)|21|Roundabout counter clockwise exit 2 of 3|
-|![roundabout CCW exit 3-3](assets/nav-icons/ic_nav_roundabout_ccw3_3.png)|22|Roundabout counter clockwise exit 3 of 3|
-|![roundabout CW exit 1-1](assets/nav-icons/ic_nav_roundabout_cw1_1.png)|23|Roundabout clockwise exit 1 of 1|
-|![roundabout CW exit 1-2](assets/nav-icons/ic_nav_roundabout_cw1_2.png)|24|Roundabout clockwise exit 1 of 2|
-|![roundabout CW exit 1-3](assets/nav-icons/ic_nav_roundabout_cw1_3.png)|25|Roundabout clockwise exit 1 of 3|
-|![roundabout CW exit 2-2](assets/nav-icons/ic_nav_roundabout_cw2_2.png)|26|Roundabout clockwise exit 2 of 2|
-|![roundabout CW exit 2-3](assets/nav-icons/ic_nav_roundabout_cw2_3.png)|27|Roundabout counter clockwise exit 2 of 3|
-|![roundabout CW exit 3-3](assets/nav-icons/ic_nav_roundabout_cw3_3.png)|28|Roundabout counter clockwise exit 3 of 3|
+|![roundabout exit left](assets/nav-icons/ic_nav_roundabout_exit_cw.png)|15|Roundabout Exit Left|
+|![roundabout exit right](assets/nav-icons/ic_nav_roundabout_exit_ccw.png)|16|Roundabout Exit right|
+|![roundabout CCW exit 1-1](assets/nav-icons/ic_nav_roundabout_ccw1_1.png)|17|Roundabout Counter Clockwise Exit 1 of 1|
+|![roundabout CCW exit 1-2](assets/nav-icons/ic_nav_roundabout_ccw1_2.png)|18|Roundabout Counter Clockwise Exit 1 of 2|
+|![roundabout CCW exit 1-3](assets/nav-icons/ic_nav_roundabout_ccw1_3.png)|19|Roundabout Counter Clockwise Exit 1 of 3|
+|![roundabout CCW exit 2-2](assets/nav-icons/ic_nav_roundabout_ccw2_2.png)|20|Roundabout Counter Clockwise Exit 2 of 2|
+|![roundabout CCW exit 2-3](assets/nav-icons/ic_nav_roundabout_ccw2_3.png)|21|Roundabout Counter Clockwise Exit 2 of 3|
+|![roundabout CCW exit 3-3](assets/nav-icons/ic_nav_roundabout_ccw3_3.png)|22|Roundabout Counter Clockwise Exit 3 of 3|
+|![roundabout CW exit 1-1](assets/nav-icons/ic_nav_roundabout_cw1_1.png)|23|Roundabout Clockwise Exit 1 of 1|
+|![roundabout CW exit 1-2](assets/nav-icons/ic_nav_roundabout_cw1_2.png)|24|Roundabout Clockwise Exit 1 of 2|
+|![roundabout CW exit 1-3](assets/nav-icons/ic_nav_roundabout_cw1_3.png)|25|Roundabout Clockwise Exit 1 of 3|
+|![roundabout CW exit 2-2](assets/nav-icons/ic_nav_roundabout_cw2_2.png)|26|Roundabout Clockwise Exit 2 of 2|
+|![roundabout CW exit 2-3](assets/nav-icons/ic_nav_roundabout_cw2_3.png)|27|Roundabout Clockwise Exit 2 of 3|
+|![roundabout CW exit 3-3](assets/nav-icons/ic_nav_roundabout_cw3_3.png)|28|Roundabout Clockwise Exit 3 of 3|
 |![roundabout fallback](assets/nav-icons/ic_nav_roundabout_fallback.png)|29|Roundabout fallback|
 |![left route](assets/nav-icons/ic_nav_outof_route.png)|30|Out of route|
 |No image|31…n|We might enhance the table in future versions.|
