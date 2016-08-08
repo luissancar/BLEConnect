@@ -107,7 +107,7 @@ You can download the arrows [here](assets/nav-icons/navigationArrows.zip) or mak
 |No image|13|Reserved|
 |No image|14|Reserved|
 |![roundabout exit left](assets/nav-icons/ic_nav_roundabout_exit_cw.png)|15|Roundabout Exit Left|
-|![roundabout exit right](assets/nav-icons/ic_nav_roundabout_exit_ccw.png)|16|Roundabout Exit right|
+|![roundabout exit right](assets/nav-icons/ic_nav_roundabout_exit_ccw.png)|16|Roundabout Exit Right|
 |![roundabout CCW exit 1-1](assets/nav-icons/ic_nav_roundabout_ccw1_1.png)|17|Roundabout Counter Clockwise Exit 1 of 1|
 |![roundabout CCW exit 1-2](assets/nav-icons/ic_nav_roundabout_ccw1_2.png)|18|Roundabout Counter Clockwise Exit 1 of 2|
 |![roundabout CCW exit 1-3](assets/nav-icons/ic_nav_roundabout_ccw1_3.png)|19|Roundabout Counter Clockwise Exit 1 of 3|
@@ -120,8 +120,8 @@ You can download the arrows [here](assets/nav-icons/navigationArrows.zip) or mak
 |![roundabout CW exit 2-2](assets/nav-icons/ic_nav_roundabout_cw2_2.png)|26|Roundabout Clockwise Exit 2 of 2|
 |![roundabout CW exit 2-3](assets/nav-icons/ic_nav_roundabout_cw2_3.png)|27|Roundabout Clockwise Exit 2 of 3|
 |![roundabout CW exit 3-3](assets/nav-icons/ic_nav_roundabout_cw3_3.png)|28|Roundabout Clockwise Exit 3 of 3|
-|![roundabout fallback](assets/nav-icons/ic_nav_roundabout_fallback.png)|29|Roundabout fallback|
-|![left route](assets/nav-icons/ic_nav_outof_route.png)|30|Out of route|
+|![roundabout fallback](assets/nav-icons/ic_nav_roundabout_fallback.png)|29|Roundabout Fallback|
+|![left route](assets/nav-icons/ic_nav_outof_route.png)|30|Out Of Route|
 |No image|31…n|We might enhance the table in future versions.|
 
 <a name="data_street"></a>
