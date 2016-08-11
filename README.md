@@ -15,7 +15,7 @@ All you need to implement this is found here:
 ##How it works
 
 ###Connect to komoot App
-![Connecting process](assets/BLE-Connect.png)
+<div style="text-align:center"><img src="assets/BLE-Connect.png" width="673" /></div>
 
 ####Komoot App
 The user activates BLE Connect inside the komoot app settings. When doing so, the app starts advertising the komoot navigation BLE service and tells the user to start pairing via their external BLE device. 
@@ -29,7 +29,7 @@ The external BLE device is responsible to establish the connection and subscribi
 
 
 ###Receive Navigation Instructions
-![Deliver navigation instructions](assets/BLE-SendNavigation.png)
+<div style="text-align:center"><img src="assets/BLE-SendNavigation.png" width="673" /></div>
 
 ####Komoot App
 The komoot app sends instructions data ~1 per second when a navigation gets started (or resumed) in the komoot app. How data is transferred is described in detail [below](#headerData).
