@@ -2,7 +2,7 @@
 
 ##BLEConnect
 
-With komoot BLE Connect, you can enable your BLE device to show navigation instructions for cycling, running and outdoor routes. [https://www.komoot.de/partner/connect](https://www.komoot.de/partner/connect)
+With komoot BLE Connect, you can enable your BLE device to show navigation instructions for cycling, running and outdoor routes. [https://www.komoot.de/partnerships/connect](https://www.komoot.de/partnerships/connect)
 
 All you need to implement this is found here:
 
