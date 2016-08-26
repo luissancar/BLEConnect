@@ -69,7 +69,7 @@ When you read the GATT characteristic after you got notified, you will receive t
 
 ![Data structure](assets/BLE-Data.png)
 
-- [Identifier](#data_identifier) (UUID)
+- [Identifier](#data_identifier) (UInt32)
 - [Direction Arrow](#data_directionArrows) (UInt8)
 - [Street](#data_street) (UTF8 string)
 - [Distance](#data_distance) (UInt32)
@@ -77,7 +77,7 @@ When you read the GATT characteristic after you got notified, you will receive t
 <a name="data_identifier"></a>
 ###Identifier
 
-UUID to identify a single navigation instruction. Use this identifier for sending the read request to the characteristic. If we get a read request without this identifier, we will deliver the last data object.
+UInt32 value to identify a single navigation instruction. Use this identifier for sending the read request to the characteristic. If we get a read request without this identifier, we will deliver the last data object.
 
 <a name="data_directionArrows"></a>
 ### Direction Arrows
