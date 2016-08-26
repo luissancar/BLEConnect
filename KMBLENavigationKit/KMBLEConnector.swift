@@ -223,7 +223,7 @@ public enum KMBLEConnectionErrorType: ErrorType {
                 if let navigationCharacteristic = navigationCharacteristic {
                     var success : Bool
                     //refactor this to make it more clear
-                    let data = dataObjectForUUID(dataObject.identifier)
+                    let data = dataObjectForIdentifier(dataObject.identifier)
                     success = peripheralManager.updateValue(data, forCharacteristic: navigationCharacteristic, onSubscribedCentrals: nil)
                     self.log("did send \(dataObject) successful \(success)", logLevel: .Info)
                 }
@@ -247,11 +247,9 @@ public enum KMBLEConnectionErrorType: ErrorType {
     
     //MARK: private methods
     
-    private func dataObjectForUUID(uuid:NSUUID) -> NSData {
-        let uuidByteLenght = 16
-        var uuidBytes: [UInt8] = [UInt8](count: uuidByteLenght, repeatedValue: 0)
-        uuid.getUUIDBytes(&uuidBytes)
-        return NSData(bytes: &uuidBytes, length: uuidByteLenght)
+    private func dataObjectForIdentifier(identifier: UInt32) -> NSData {
+        var dataIdentifier = identifier
+        return NSData(bytes: &dataIdentifier, length: sizeof(UInt32))
     }
     
     private func configureLogging() {

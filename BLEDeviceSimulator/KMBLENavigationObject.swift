@@ -12,7 +12,7 @@ import KMBLENavigationKit
 
 class KMBLENavigationObject: NSObject {
 
-    private(set) var identifier : NSUUID
+    private(set) var identifier : UInt32
     private(set) var direction : NavigationDirection
     private(set) var distance : UInt32
     private(set) var streetname : String?
@@ -21,10 +21,10 @@ class KMBLENavigationObject: NSObject {
         let bytes = UnsafePointer<UInt8>(data.bytes)
         var start = 0
         
-        var uuidBytes: [UInt8] = [UInt8](count: 16, repeatedValue: 0)
-        data.getBytes(&uuidBytes, length: 16)
-        self.identifier = NSUUID(UUIDBytes: &uuidBytes)
-        start = 16
+        var identifierValue : UInt32 = 0
+        data.getBytes(&identifierValue, range: NSMakeRange(start, sizeof(UInt32)))
+        self.identifier = identifierValue
+        start += sizeof(UInt32)
         
         if let parsedDirection =  NavigationDirection(rawValue: UInt8(bytes[start])) {
             self.direction = parsedDirection
@@ -112,7 +112,7 @@ class KMBLENavigationObject: NSObject {
     
     override var description: String {
         get {
-            return "identifier: \(self.identifier.UUIDString)\ndirection: \(self.direction)\ndistance: \(self.distance)\nstreetname: \(self.streetname)"
+            return "identifier: \(self.identifier)\ndirection: \(self.direction)\ndistance: \(self.distance)\nstreetname: \(self.streetname)"
         }
     }
     
