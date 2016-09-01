@@ -8,22 +8,22 @@
 
 import Foundation
 
-@objc public class KMBLENavigationDataObject: NSObject {
+@objc open class KMBLENavigationDataObject: NSObject {
     
-    private(set) var identifier : UInt32
-    private(set) var direction : NavigationDirection
-    private(set) var distance : UInt32
-    private(set) var streetname : String?
+    fileprivate(set) var identifier : UInt32
+    fileprivate(set) var direction : NavigationDirection
+    fileprivate(set) var distance : UInt32
+    fileprivate(set) var streetname : String?
     
-    public override var description: String {
+    open override var description: String {
         get {
             return "identifier: \(self.identifier)\ndirection: \(direction.rawValue)\n distance:\(distance)\nstreetname: \(streetname)"
         }
     }
     
-    override private init() {
+    override fileprivate init() {
         self.identifier = arc4random()
-        self.direction = NavigationDirection.Unknown
+        self.direction = NavigationDirection.unknown
         self.distance = 0
     }
     
@@ -41,15 +41,15 @@ import Foundation
     /**
      Produces a NSData object from the navigation object. For details please check [BLEConnect Documentation](https://github.com/komoot/BLEConnect)
     */
-    func convertToNSData() -> NSData {
+    func convertToNSData() -> Data {
         let data = NSMutableData()
-        data.appendBytes(&identifier, length: sizeof(UInt32))
-        data.appendBytes(&direction, length: sizeof(UInt8))
-        data.appendBytes(&distance, length: sizeof(UInt32))
+        data.append(&identifier, length: MemoryLayout<UInt32>.size)
+        data.append(&direction, length: MemoryLayout<UInt8>.size)
+        data.append(&distance, length: MemoryLayout<UInt32>.size)
         if let streetname = self.streetname {
-            data.appendData(streetname.dataUsingEncoding(NSUTF8StringEncoding)!)
+            data.append(streetname.data(using: String.Encoding.utf8)!)
         }
-        return data
+        return data as Data
     }
     
 }

@@ -82,14 +82,3 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/CocoaLumberjack.default-Core-Swift/CocoaLumberjack.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/LumberjackConsole/LumberjackConsole.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/NBUCore/NBUCore.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/CocoaLumberjack.default-Core-Swift/CocoaLumberjack.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/LumberjackConsole/LumberjackConsole.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/NBUCore/NBUCore.framework"
-fi
