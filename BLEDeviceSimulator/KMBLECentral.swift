@@ -55,11 +55,11 @@ class KMBLECentral : NSObject {
     func startDiscovery() {
         foundPeripherals = nil
         if #available(iOS 9.0, *) {
-            if (centralManager.state == CBCentralManagerState.PoweredOn && centralManager.isScanning == false) {
+            if ( centralManager.state.rawValue == CBCentralManagerState.PoweredOn.rawValue && centralManager.isScanning == false) {
                 centralManager.scanForPeripheralsWithServices([CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
             }
         } else {
-            if (centralManager.state == CBCentralManagerState.PoweredOn) {
+            if ( centralManager.state.rawValue == CBCentralManagerState.PoweredOn.rawValue ) {
                 centralManager.scanForPeripheralsWithServices([CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
             }
         }
