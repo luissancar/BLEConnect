@@ -471,7 +471,7 @@
 					39A5645F1D3CE764007D303D = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -481,7 +481,7 @@
 					39A564831D3CE77D007D303D = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -970,6 +970,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1020,6 +1021,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1096,6 +1098,7 @@
 			baseConfigurationReference = EF595DADE70A37B0E54AFF4C /* Pods-KomootAppSimulator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = KomootAppSimulator/Info.plist;
@@ -1112,6 +1115,7 @@
 			baseConfigurationReference = E1DA5688C0F9703EE5B09FE3 /* Pods-KomootAppSimulator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				INFOPLIST_FILE = KomootAppSimulator/Info.plist;
@@ -1128,6 +1132,7 @@
 			baseConfigurationReference = CBA0FD7EC355D342C4F31E2F /* Pods-BLEDeviceSimulator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLEDeviceSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1143,6 +1148,7 @@
 			baseConfigurationReference = AA7EA2B80650A8522F4CD35C /* Pods-BLEDeviceSimulator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLEDeviceSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

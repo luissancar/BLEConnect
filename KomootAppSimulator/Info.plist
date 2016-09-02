@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>   </string>
+	<string>Bluetooth is needed to send test navigation events.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
