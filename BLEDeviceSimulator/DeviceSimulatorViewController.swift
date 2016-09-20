@@ -18,7 +18,11 @@ class DeviceSimulatorViewController: UIViewController {
             central?.dataDelegate = self
         }
     }
-    
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     @IBOutlet weak var connectButton : UIButton!
     @IBOutlet weak var console: PTEConsoleTableView!
     
@@ -26,7 +30,7 @@ class DeviceSimulatorViewController: UIViewController {
     @IBOutlet weak var navigationStreetnameLabel: UILabel!
     @IBOutlet weak var navigationDistanceLabel: UILabel!
     
-    private var connectedPeripherals = [CBPeripheral]()
+    fileprivate var connectedPeripherals = [CBPeripheral]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +40,7 @@ class DeviceSimulatorViewController: UIViewController {
         connectButton.clipsToBounds = true
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if let central = central {
@@ -46,17 +50,17 @@ class DeviceSimulatorViewController: UIViewController {
         updateButtonStates()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let deviceNavigationController = segue.destinationViewController as? UINavigationController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let deviceNavigationController = segue.destination as? UINavigationController {
             if let deviceConnectViewController = deviceNavigationController.viewControllers.first as? KMBLEDeviceConnectViewController {
                 deviceConnectViewController.central = central
                 deviceConnectViewController.delegate = self
             }
         }
-        super.prepareForSegue(segue, sender: sender)
+        super.prepare(for: segue, sender: sender)
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "bleDeviceSegue" {
             if let central = central {
                 if connectedPeripherals.count > 0 {
@@ -71,28 +75,25 @@ class DeviceSimulatorViewController: UIViewController {
         return true
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
-    }
     
     //MARK: private functions
     
-    private func updateButtonStates() {
+    fileprivate func updateButtonStates() {
             if connectedPeripherals.count > 0 {
-                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), forState: UIControlState.Normal)
-                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#D2D2D2")!), forState: UIControlState.Highlighted)
-                connectButton.setTitle("Disconnect", forState: UIControlState.Normal)
-                connectButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControlState.normal)
+                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#D2D2D2")!), for: UIControlState.highlighted)
+                connectButton.setTitle("Disconnect", for: UIControlState.normal)
+                connectButton.setTitleColor(UIColor.black, for: UIControlState.normal)
             } else {
-                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), forState: UIControlState.Normal)
-                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), forState: UIControlState.Highlighted)
-                connectButton.setTitle("Start Connection", forState: UIControlState.Normal)
-                connectButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControlState.normal)
+                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControlState.highlighted)
+                connectButton.setTitle("Start Connection", for: UIControlState.normal)
+                connectButton.setTitleColor(UIColor.white, for: UIControlState.normal)
             }
         
     }
     
-    private func resetSimulationViewState() {
+    fileprivate func resetSimulationViewState() {
         navigationImageView.image = nil
         navigationDistanceLabel.text = "distance"
         navigationStreetnameLabel.text = "street"
@@ -102,7 +103,7 @@ class DeviceSimulatorViewController: UIViewController {
 extension DeviceSimulatorViewController : KMBLECentralDelegate {
     
     func central(central: KMBLECentral, didConnectToPeripheral peripheral: CBPeripheral) {
-        self.connectedPeripherals.append(peripheral)
+        connectedPeripherals.append(peripheral)
         updateButtonStates()
         resetSimulationViewState()
     }
@@ -112,8 +113,8 @@ extension DeviceSimulatorViewController : KMBLECentralDelegate {
     }
     
     func central(central: KMBLECentral, didDisconnectFromPeripheral peripheral: CBPeripheral) {
-        if let index = connectedPeripherals.indexOf(peripheral) {
-            self.connectedPeripherals.removeAtIndex(index)
+        if let index = connectedPeripherals.index(of: peripheral) {
+            self.connectedPeripherals.remove(at: index)
         }
         
         self.updateButtonStates()
@@ -132,7 +133,7 @@ extension DeviceSimulatorViewController: KMBLEDataDelegate {
         let unitString = "m"
 
         navigationDistanceLabel.text = "\(dataObject.distance) \(unitString)"
-        navigationImageView.image = dataObject.navigationImage()?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        navigationImageView.image = dataObject.navigationImage()?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
     }
 }
 
@@ -151,15 +152,15 @@ extension UIImage {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        guard let cgImage = image.CGImage else { return nil }
-        self.init(CGImage: cgImage)
+        guard let cgImage = image?.cgImage else { return nil }
+        self(cgImage: cgImage)
     }
 }
 
 extension UIColor {
     convenience init?(hex: String) {
         
-            var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+            var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewline).uppercaseString
             
             if (cString.hasPrefix("#")) {
                 cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
@@ -168,7 +169,7 @@ extension UIColor {
             assert((cString.characters.count) == 6)
         
             var rgbValue:UInt32 = 0
-            NSScanner(string: cString).scanHexInt(&rgbValue)
+            Scanner(string: cString).scanHexInt32(&rgbValue)
             
             self.init(
                 red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,

@@ -1,3 +1,38 @@
-PODFILE CHECKSUM: 79270f3e86149f1ea6452a38fda7fac483d3b222
+PODS:
+  - CocoaLumberjack (3.0.0):
+    - CocoaLumberjack/Default (= 3.0.0)
+    - CocoaLumberjack/Extensions (= 3.0.0)
+  - CocoaLumberjack/Core (3.0.0)
+  - CocoaLumberjack/Default (3.0.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (3.0.0):
+    - CocoaLumberjack/Default
+  - CocoaLumberjack/Swift (3.0.0):
+    - CocoaLumberjack/Extensions
+  - LumberjackConsole (2.4.3):
+    - CocoaLumberjack (>= 2.0.0)
+    - NBUCore (>= 2.0.3)
+  - NBUCore (2.0.5)
+
+DEPENDENCIES:
+  - CocoaLumberjack/Swift (from `https://github.com/ffried/CocoaLumberjack.git`, branch `swift3.0`)
+  - LumberjackConsole (= 2.4.3)
+
+EXTERNAL SOURCES:
+  CocoaLumberjack:
+    :branch: swift3.0
+    :git: https://github.com/ffried/CocoaLumberjack.git
+
+CHECKOUT OPTIONS:
+  CocoaLumberjack:
+    :commit: 5ca1063c1f8c3a7f1f443dbca8ec56e406da06f1
+    :git: https://github.com/ffried/CocoaLumberjack.git
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
+  LumberjackConsole: 81bad3312fea315b8a17e53926b014f032ec1f44
+  NBUCore: bfdce78c97f2a9566c97082f44157547223b22a6
+
+PODFILE CHECKSUM: 204bc262b35e9e19f2154caff7b27385c46fcbaf
 
 COCOAPODS: 1.0.1

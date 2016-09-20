@@ -13,10 +13,10 @@ class KMBLENavigationSimulatorTests: XCTestCase {
 
 
     func testSimpleParsing() {
-        let filePath = NSBundle.init(forClass: KMBLENavigationSimulatorTests.self).pathForResource("testExport", ofType: "csv")
+        let filePath = Bundle.init(for: KMBLENavigationSimulatorTests.self).path(forResource: "testExport", ofType: "csv")
         XCTAssertNotNil(filePath)
         
-        let fileURL = NSURL(fileURLWithPath: filePath!, isDirectory: false)
+        let fileURL = URL(fileURLWithPath: filePath!, isDirectory: false)
         XCTAssertNotNil(fileURL)
         
         let bleConnector = KMBLEConnector(advertisingIdentifier: "test")
@@ -29,10 +29,10 @@ class KMBLENavigationSimulatorTests: XCTestCase {
     }
     
     func testRoundaboutParsing() {
-        let filePath = NSBundle.init(forClass: KMBLENavigationSimulatorTests.self).pathForResource("testRoundaboutExport", ofType: "csv")
+        let filePath = Bundle.init(for: KMBLENavigationSimulatorTests.self).path(forResource: "testRoundaboutExport", ofType: "csv")
         XCTAssertNotNil(filePath)
         
-        let fileURL = NSURL(fileURLWithPath: filePath!, isDirectory: false)
+        let fileURL = URL(fileURLWithPath: filePath!, isDirectory: false)
         XCTAssertNotNil(fileURL)
         let bleConnector = KMBLEConnector(advertisingIdentifier: "test")
         
@@ -47,7 +47,7 @@ class KMBLENavigationSimulatorTests: XCTestCase {
     func testShortenString() {
         let originalString = "\"Kiepenheuerallee\""
         
-        let shortenString = originalString.substringWithRange(Range<String.Index>(originalString.startIndex.advancedBy(1)..<originalString.endIndex.advancedBy(-1)))
+        let shortenString = originalString.substring(with: Range<String.Index>(originalString.characters.index(originalString.startIndex, offsetBy: 1)..<originalString.characters.index(originalString.endIndex, offsetBy: -1)))
         XCTAssertEqual("Kiepenheuerallee", shortenString)
     }
 

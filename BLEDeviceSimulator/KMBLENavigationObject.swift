@@ -18,30 +18,31 @@ class KMBLENavigationObject: NSObject {
     private(set) var streetname : String?
     
     init(data: NSData) {
-        let bytes = UnsafePointer<UInt8>(data.bytes)
+        let bytes = data.bytes
         var start = 0
         
         var identifierValue : UInt32 = 0
-        data.getBytes(&identifierValue, range: NSMakeRange(start, sizeof(UInt32)))
+        data.getBytes(&identifierValue, range: NSMakeRange(start, MemoryLayout<UInt32>.size))
         self.identifier = identifierValue
-        start += sizeof(UInt32)
+        start += MemoryLayout<UInt32>.size
         
-        if let parsedDirection =  NavigationDirection(rawValue: UInt8(bytes[start])) {
+        let direction : UnsafePointer<UInt8> = bytes.bindMemory(to: UInt8.self, capacity: 1)
+        if let parsedDirection =  NavigationDirection(rawValue: direction[start]) {
             self.direction = parsedDirection
         } else {
-            self.direction = .Unknown
+            self.direction = .unknown
         }
         
-        start += sizeof(UInt8)
+        start += MemoryLayout<UInt8>.size
         
         var distanceValue : UInt32 = 0
-        data.getBytes(&distanceValue, range: NSMakeRange(start, sizeof(UInt32)))
+        data.getBytes(&distanceValue, range: NSMakeRange(start, MemoryLayout<UInt32>.size))
         self.distance = distanceValue
-        start += sizeof(UInt32)
+        start += MemoryLayout<UInt32>.size
         
-        var streetnameBytes : [UInt8] = [UInt8](count: data.length - start, repeatedValue: 0)
+        var streetnameBytes : [UInt8] = [UInt8](repeating: 0, count: data.length - start)
         data.getBytes(&streetnameBytes, range:NSMakeRange(start, streetnameBytes.count))
-        self.streetname = String(bytes: streetnameBytes, encoding: NSUTF8StringEncoding)
+        self.streetname = String(bytes: streetnameBytes, encoding: String.Encoding.utf8)
         
         super.init()
         
@@ -49,61 +50,61 @@ class KMBLENavigationObject: NSObject {
     
     func navigationImage() -> UIImage? {
         switch direction {
-        case .TurnStraight:
+        case .turnStraight:
             return UIImage(named: "ic_nav_arrow_keep_going")
-        case .Start:
+        case .start:
             return UIImage(named: "ic_nav_arrow_start")
-        case .Finish:
+        case .finish:
             return UIImage(named: "ic_nav_arrow_finish")
-        case .LeftRoute:
+        case .leftRoute:
              return UIImage(named: "ic_nav_outof_route")
-        case .TurnLeft:
+        case .turnLeft:
             return UIImage(named: "ic_nav_arrow_turn_left")
-        case .TurnRight:
+        case .turnRight:
             return UIImage(named: "ic_nav_arrow_turn_right")
-        case .TurnU:
+        case .turnU:
             return UIImage(named: "ic_nav_arrow_uturn")
-        case .TurnForkLeft:
+        case .turnForkLeft:
             return UIImage(named: "ic_nav_arrow_fork_left")
-        case .TurnForkRight:
+        case .turnForkRight:
             return UIImage(named: "ic_nav_arrow_fork_right")
-        case .TurnSharpRight:
+        case .turnSharpRight:
             return UIImage(named: "ic_nav_arrow_turn_hard_right")
-        case .TurnSharpLeft:
+        case .turnSharpLeft:
             return UIImage(named: "ic_nav_arrow_turn_hard_left")
-        case .TurnSlightLeft:
+        case .turnSlightLeft:
             return UIImage(named: "ic_nav_arrow_keep_left")
-        case .TurnSlightRight:
+        case .turnSlightRight:
             return UIImage(named: "ic_nav_arrow_keep_right")
-        case .RoundaboutCCW11:
+        case .roundaboutCCW11:
             return UIImage(named: "ic_nav_roundabout_ccw1_1")
-        case .RoundaboutCCW12:
+        case .roundaboutCCW12:
             return UIImage(named: "ic_nav_roundabout_ccw1_2")
-        case .RoundaboutCCW13:
+        case .roundaboutCCW13:
             return UIImage(named: "ic_nav_roundabout_ccw1_3")
-        case .RoundaboutCCW22:
+        case .roundaboutCCW22:
             return UIImage(named: "ic_nav_roundabout_ccw2_2")
-        case .RoundaboutCCW23:
+        case .roundaboutCCW23:
             return UIImage(named: "ic_nav_roundabout_ccw2_3")
-        case .RoundaboutCCW33:
+        case .roundaboutCCW33:
             return UIImage(named: "ic_nav_roundabout_ccw3_3")
-        case .RoundaboutCW11:
+        case .roundaboutCW11:
             return UIImage(named: "ic_nav_roundabout_cw1_1")
-        case .RoundaboutCW12:
+        case .roundaboutCW12:
             return UIImage(named: "ic_nav_roundabout_cw1_2")
-        case .RoundaboutCW13:
+        case .roundaboutCW13:
             return UIImage(named: "ic_nav_roundabout_cw1_3")
-        case .RoundaboutCW22:
+        case .roundaboutCW22:
             return UIImage(named: "ic_nav_roundabout_cw_2_2")
-        case .RoundaboutCW23:
+        case .roundaboutCW23:
             return UIImage(named: "ic_nav_roundabout_cw_2_3")
-        case .RoundaboutCW33:
+        case .roundaboutCW33:
             return UIImage(named: "ic_nav_roundabout_cw3_3")
-        case .ExitRoundaboutLeft:
+        case .exitRoundaboutLeft:
             return UIImage(named: "ic_nav_roundabout_exit_cw")
-        case .ExitRoundaboutRight:
+        case .exitRoundaboutRight:
             return UIImage(named: "ic_nav_roundabout_exit_ccw")
-        case .RoundaboutFallback:
+        case .roundaboutFallback:
             return UIImage(named: "ic_nav_roundabout_fallback")
         default:
             return nil

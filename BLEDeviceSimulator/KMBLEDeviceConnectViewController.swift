@@ -19,6 +19,10 @@ class KMBLEDeviceConnectViewController: UIViewController {
     @IBOutlet weak var searchingDevicesLabel: UILabel!
     @IBOutlet weak var deviceTableView: UITableView!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .default
+    }
+
     weak var delegate : KMBLEDeviceConnectViewControllerDelegate?
     
     private var peripherals = [CBPeripheral]()
@@ -26,34 +30,31 @@ class KMBLEDeviceConnectViewController: UIViewController {
     var central : KMBLECentral?
     
     override func viewDidLoad() {
-        deviceTableView.hidden = true
+        deviceTableView.isHidden = true
         
         if let central = central {
             central.delegate = self
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if let central = central {
-            searchingDevicesLabel.hidden = false
+            searchingDevicesLabel.isHidden = false
             searchingDevicesIndicator.startAnimating()
             central.startDiscovery()
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         if let central = central {
-            searchingDevicesLabel.hidden = true
+            searchingDevicesLabel.isHidden = true
             searchingDevicesIndicator.stopAnimating()
             central.stopDiscovery()
         }
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .Default
-    }
     
     //MARK: Actions
     
@@ -89,7 +90,7 @@ extension KMBLEDeviceConnectViewController : UITableViewDataSource {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return peripherals.count
     }
     
@@ -108,25 +109,25 @@ extension KMBLEDeviceConnectViewController : UITableViewDelegate {
 
 extension KMBLEDeviceConnectViewController : KMBLECentralDelegate {
     func central(central: KMBLECentral, didDiscoverPeripherals foundPeripherals: [CBPeripheral]) {
-        searchingDevicesLabel.hidden = true
+        searchingDevicesLabel.isHidden = true
         searchingDevicesIndicator.stopAnimating()
         peripherals = foundPeripherals
-        deviceTableView.hidden = false
+        deviceTableView.isHidden = false
         deviceTableView.reloadData()
     }
     
     func central(central: KMBLECentral, didFailConnectToPeripheral: CBPeripheral, error: NSError?) {
-        let alert = UIAlertController(title: "Connection error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Connection error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func central(central: KMBLECentral, didConnectToPeripheral peripheral: CBPeripheral) {
         if let delegate = delegate {
-            delegate.connectController(self, didConnectToPeripheral: peripheral)
+            delegate.connectController(connectController: self, didConnectToPeripheral: peripheral)
         }
-        dismissViewController()
+        dismiss(animated: true, completion: nil)
     }
     
     func central(central: KMBLECentral, didDisconnectFromPeripheral: CBPeripheral) {

@@ -7,8 +7,8 @@ target 'BLEDeviceSimulator' do
 
   # Pods for BLEDeviceSimulator
 
-# pod 'CocoaLumberjack/Swift'
-# pod 'LumberjackConsole', '~> 2.4'
+    pod 'CocoaLumberjack/Swift', :git => 'https://github.com/ffried/CocoaLumberjack.git', :branch => 'swift3.0'
+    pod 'LumberjackConsole', '2.4.3'
 
   target 'BLEDeviceSimulatorTests' do
     inherit! :search_paths
@@ -22,7 +22,7 @@ target 'KMBLENavigationKit' do
   use_frameworks!
 
   # Pods for KMBLENavigationKit
-  # pod 'CocoaLumberjack/Swift'
+  pod 'CocoaLumberjack/Swift', :git => 'https://github.com/ffried/CocoaLumberjack.git', :branch => 'swift3.0'
 end
 
 target 'KomootAppSimulator' do
@@ -30,8 +30,8 @@ target 'KomootAppSimulator' do
   use_frameworks!
 
   # Pods for KomootAppSimulator
-  #  pod 'CocoaLumberjack/Swift'
-  # pod 'LumberjackConsole', '~> 2.4'
+  pod 'CocoaLumberjack/Swift', :git => 'https://github.com/ffried/CocoaLumberjack.git', :branch => 'swift3.0'
+  pod 'LumberjackConsole', '2.4.3'
   
   target 'KomootAppSimulatorTests' do
     inherit! :search_paths
