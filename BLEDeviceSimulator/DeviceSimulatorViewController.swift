@@ -153,14 +153,14 @@ extension UIImage {
         UIGraphicsEndImageContext()
         
         guard let cgImage = image?.cgImage else { return nil }
-        self(cgImage: cgImage)
+        self = UIImage(cgImage: cgImage)
     }
 }
 
 extension UIColor {
     convenience init?(hex: String) {
         
-            var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewline).uppercaseString
+            var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercaseString
             
             if (cString.hasPrefix("#")) {
                 cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))

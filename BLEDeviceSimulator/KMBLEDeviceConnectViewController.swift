@@ -25,7 +25,7 @@ class KMBLEDeviceConnectViewController: UIViewController {
 
     weak var delegate : KMBLEDeviceConnectViewControllerDelegate?
     
-    private var peripherals = [CBPeripheral]()
+    fileprivate var peripherals = [CBPeripheral]()
     
     var central : KMBLECentral?
     
@@ -68,25 +68,25 @@ class KMBLEDeviceConnectViewController: UIViewController {
     
     private func dismissViewController() {
         if let presentingController = self.presentingViewController {
-            presentingController.dismissViewControllerAnimated(true, completion: nil)
+            presentingController.dismiss(animated: true, completion: nil)
         }
     }
 }
 
 extension KMBLEDeviceConnectViewController : UITableViewDataSource {
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("deviceCell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "deviceCell")
         
         if let deviceCell = cell as? KMBLEBluetoothDeviceCell {
             let peripheral = peripherals[indexPath.row]
-            deviceCell.deviceNameLabel.text = peripheral.name != nil ? peripheral.name : peripheral.identifier.UUIDString
+            deviceCell.deviceNameLabel.text = peripheral.name != nil ? peripheral.name : peripheral.identifier.uuidString
         }
         
         return cell!
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
@@ -98,10 +98,10 @@ extension KMBLEDeviceConnectViewController : UITableViewDataSource {
 
 extension KMBLEDeviceConnectViewController : UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let central = central {
             let peripheral = peripherals[indexPath.row]
-            central.connect(peripheral)
+            central.connect(peripheral: peripheral)
         }
     }
     
