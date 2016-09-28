@@ -48,7 +48,9 @@ You have to start the scanning for the navigation service once you detect the co
 <a name="headerSimulatorApps"></a>
 ##The Simulator Apps
 
-To make development easier for you, we created two simulator apps you can find in this repository. Just clone the repository and open the Xcode Project to start the simulators on your iOS device.
+To make development easier for you, we created two simulator apps you can find in this repository. Just clone the repository and open the Xcode Project to start the simulators on your iOS device. 
+
+**Note:** Set the signing team in the General tab, if you run the simulator apps under Xcode 8 or above.
 
 | KomootAppSimulator | BLEDeviceSimulator |
 |:---:|:---:|

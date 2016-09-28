@@ -453,13 +453,11 @@
 				TargetAttributes = {
 					3918E8D11D3FB6C30069DC30 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = M999CM95TV;
 						LastSwiftMigration = 0800;
 						TestTargetID = 39A564831D3CE77D007D303D;
 					};
 					3918E8F11D40C1D10069DC30 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = M999CM95TV;
 						LastSwiftMigration = 0800;
 						TestTargetID = 39A5645F1D3CE764007D303D;
 					};
@@ -469,7 +467,6 @@
 					};
 					39A5645F1D3CE764007D303D = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = M999CM95TV;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -479,7 +476,6 @@
 					};
 					39A564831D3CE77D007D303D = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = M999CM95TV;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -887,7 +883,7 @@
 			baseConfigurationReference = 6F81F3C17D58F9A047188A15 /* Pods-BLEDeviceSimulatorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = M999CM95TV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLEDeviceSimulatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -903,7 +899,7 @@
 			baseConfigurationReference = 67DBE8B1319169487F9501E5 /* Pods-BLEDeviceSimulatorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = M999CM95TV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLEDeviceSimulatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -919,7 +915,7 @@
 			baseConfigurationReference = D7340D338200D806D1E3C52B /* Pods-KomootAppSimulatorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = M999CM95TV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KomootAppSimulatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -935,7 +931,7 @@
 			baseConfigurationReference = 902C6AD9910FBBE5DD3C6332 /* Pods-KomootAppSimulatorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = M999CM95TV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KomootAppSimulatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1099,7 +1095,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M999CM95TV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KomootAppSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1114,7 +1110,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M999CM95TV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KomootAppSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1129,7 +1125,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M999CM95TV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLEDeviceSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1144,7 +1140,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = M999CM95TV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLEDeviceSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
