@@ -7,8 +7,8 @@ target 'BLEDeviceSimulator' do
 
   # Pods for BLEDeviceSimulator
 
-  pod 'CocoaLumberjack/Swift'
-  pod 'LumberjackConsole', '~> 2.4'
+    pod 'CocoaLumberjack/Swift', '3.0.0'
+    pod 'LumberjackConsole', '2.4.3'
 
   target 'BLEDeviceSimulatorTests' do
     inherit! :search_paths
@@ -22,17 +22,15 @@ target 'KMBLENavigationKit' do
   use_frameworks!
 
   # Pods for KMBLENavigationKit
-  pod 'CocoaLumberjack/Swift'
+  pod 'CocoaLumberjack/Swift', '3.0.0'
 end
 
 target 'KomootAppSimulator' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for KomootAppSimulator
-  pod 'CocoaLumberjack/Swift'
-  pod 'LumberjackConsole', '~> 2.4'
-  
+  pod 'CocoaLumberjack/Swift', '3.0.0'
+
   target 'KomootAppSimulatorTests' do
     inherit! :search_paths
     # Pods for testing

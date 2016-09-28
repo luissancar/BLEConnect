@@ -8,7 +8,6 @@
 
 import UIKit
 import KMBLENavigationKit
-import LumberjackConsole
 import CocoaLumberjack
 
 class BLEConnectViewController: UIViewController {
@@ -24,9 +23,9 @@ class BLEConnectViewController: UIViewController {
     @IBOutlet weak var sendEventButton: UIButton!
     @IBOutlet weak var startSimulationButton: UIButton!
     
-    private var simulating = false
-    private var navigationSimulator : KMBLENavigationSimulator?
-    private var errorPopupShown = false
+    fileprivate var simulating = false
+    fileprivate var navigationSimulator : KMBLENavigationSimulator?
+    fileprivate var errorPopupShown = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +39,14 @@ class BLEConnectViewController: UIViewController {
     }
 
 
-    @IBAction func handleChangeOnBluetoothSwitch(sender: AnyObject) {
+    @IBAction func handleChangeOnBluetoothSwitch(_ sender: AnyObject) {
         
-        if bluetoothActiveSwitch.on {
+        if bluetoothActiveSwitch.isOn {
              if let bleConnector = bleConnector {
                 let errorType = bleConnector.startAdvertisingNavigationService(false)
                 
-                if errorType != .Success {
-                    bluetoothActiveSwitch.on = false
+                if errorType != .success {
+                    bluetoothActiveSwitch.isOn = false
                     handleBluetoothErrorType(errorType)
                 }
             }
@@ -60,93 +59,94 @@ class BLEConnectViewController: UIViewController {
         updateButtonsBySwitchState()
     }
     
-    @IBAction func handleTapOnSendEventButton(sender: AnyObject) {
+    @IBAction func handleTapOnSendEventButton(_ sender: AnyObject) {
         if let bleConnector = bleConnector {
             let testEvent = KMBLENavigationDataObject(direction: NavigationDirection(rawValue: UInt8(arc4random_uniform(31)))!, distance: UInt(arc4random_uniform(1500)), streetname: "Kiepenheuerallee \(arc4random_uniform(32))")
-            bleConnector.sendNavigationDataObject(testEvent)
+            let error = bleConnector.sendNavigationDataObject(testEvent)
+            print(error)
         }
     }
     
-    @IBAction func handleTapOnSimulationButton(sender: AnyObject) {
+    @IBAction func handleTapOnSimulationButton(_ sender: AnyObject) {
         toogleSimulation()
     }
     
     //MARK: private func
     
-    private func showErrorAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+    fileprivate func showErrorAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    private func toogleSimulation() {
+    fileprivate func toogleSimulation() {
         if navigationSimulator == nil {
-            let filePath = NSBundle.mainBundle().pathForResource("navigationSimulation", ofType: "csv")
-            let fileURL = NSURL(fileURLWithPath: filePath!)
+            let filePath = Bundle.main.path(forResource: "navigationSimulation", ofType: "csv")
+            let fileURL = URL(fileURLWithPath: filePath!)
             self.navigationSimulator = KMBLENavigationSimulator(fileURL: fileURL, bleConnector: bleConnector!)
             self.navigationSimulator?.delegate = self
         }
         
         if simulating == true {
-            if (UIApplication.sharedApplication().idleTimerDisabled == true) {
-                UIApplication.sharedApplication().idleTimerDisabled = false
+            if (UIApplication.shared.isIdleTimerDisabled == true) {
+                UIApplication.shared.isIdleTimerDisabled = false
             }
             simulating = false
             navigationSimulator?.stop()
-            startSimulationButton.setTitle("Start simulation", forState: UIControlState.Normal)
+            startSimulationButton.setTitle("Start simulation", for: UIControlState())
             
         } else {
-            if (UIApplication.sharedApplication().idleTimerDisabled == false) {
-                UIApplication.sharedApplication().idleTimerDisabled = true
+            if (UIApplication.shared.isIdleTimerDisabled == false) {
+                UIApplication.shared.isIdleTimerDisabled = true
             }
             simulating = true
             navigationSimulator?.start()
-            startSimulationButton.setTitle("Stop simulation", forState: UIControlState.Normal)
+            startSimulationButton.setTitle("Stop simulation", for: UIControlState())
         }
         
         updateSimulationButton()
     }
     
-    private func handleBluetoothErrorType(errorType: KMBLEConnectionErrorType) {
+    fileprivate func handleBluetoothErrorType(_ errorType: KMBLEConnectionErrorType) {
         switch errorType {
-        case .BluetoothLEUnavailable:
+        case .bluetoothLEUnavailable:
             showErrorAlert("Bluetooth error", message: "Bluetooth LE is not supported on your device")
-        case .BluetoothTurnedOff:
+        case .bluetoothTurnedOff:
             showErrorAlert("Bluetooth error", message: "Bluetooth is turned off")
-        case.BluetoothNotAuthorized:
+        case.bluetoothNotAuthorized:
             showErrorAlert("Bluetooth error", message: "Bluetooth is not not authorized")
         default:
             break
         }
     }
     
-    private func updateButtonsBySwitchState() {
-        if bluetoothActiveSwitch.on {
+    fileprivate func updateButtonsBySwitchState() {
+        if bluetoothActiveSwitch.isOn {
             for button in [startSimulationButton, sendEventButton] {
-                button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-                button.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), forState: UIControlState.Normal)
-                button.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), forState: UIControlState.Highlighted)
+                button?.setTitleColor(UIColor.white, for: UIControlState())
+                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControlState())
+                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControlState.highlighted)
                 
-                button.enabled = true
+                button?.isEnabled = true
             }
         } else {
             for button in [startSimulationButton, sendEventButton] {
-                button.setTitleColor(UIColor(hex: "#8A8A8A"), forState: UIControlState.Disabled)
-                button.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), forState: UIControlState.Disabled)
-                button.enabled = false
+                button?.setTitleColor(UIColor(hex: "#8A8A8A"), for: UIControlState.disabled)
+                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControlState.disabled)
+                button?.isEnabled = false
             }
         }
     }
     
-    private func updateSimulationButton() {
+    fileprivate func updateSimulationButton() {
         if simulating {
-            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), forState: UIControlState.Normal)
-            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#D2D2D2")!), forState: UIControlState.Highlighted)
-            startSimulationButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControlState())
+            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#D2D2D2")!), for: UIControlState.highlighted)
+            startSimulationButton.setTitleColor(UIColor.black, for: UIControlState())
         } else {
-            startSimulationButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), forState: UIControlState.Normal)
-            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), forState: UIControlState.Highlighted)
+            startSimulationButton.setTitleColor(UIColor.white, for: UIControlState())
+            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControlState())
+            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControlState.highlighted)
         }
     }
 }
@@ -160,24 +160,24 @@ extension UIImage {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        guard let cgImage = image?.CGImage else { return nil }
-        self.init(CGImage: cgImage)
+        guard let cgImage = image?.cgImage else { return nil }
+        self.init(cgImage: cgImage)
     }
 }
 
 extension UIColor {
     convenience init?(hex: String) {
         
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+        var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
+            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
         }
         
         assert((cString.characters.count) == 6)
         
         var rgbValue:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgbValue)
+        Scanner(string: cString).scanHexInt32(&rgbValue)
         
         self.init(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
@@ -191,26 +191,26 @@ extension UIColor {
 
 extension BLEConnectViewController : KMBLEConnectorDelegate {
     
-    func centralDidSubscribedToCharacteristic(bleConnector: KMBLEConnector) {
+    func centralDidSubscribedToCharacteristic(_ bleConnector: KMBLEConnector) {
         DDLogInfo("did subscriped")
     }
     
-    func centralDidUnsubscribedToCharacteristic(bleConnector: KMBLEConnector) {
+    func centralDidUnsubscribedToCharacteristic(_ bleConnector: KMBLEConnector) {
         DDLogInfo("did unsubscriped")
     }
     
-    func bleConnector(bleConnector: KMBLEConnector, didFailToStartAdvertisingError error: NSError) {
+    func bleConnector(_ bleConnector: KMBLEConnector, didFailToStartAdvertisingError error: NSError) {
         showErrorAlert("Error", message: error.localizedDescription)
     }
 }
 
 extension BLEConnectViewController : KMBLENavigationSimulatorDelegate {
     
-    func navigationSimulator(naviagtionSimulator: KMBLENavigationSimulator, didSendInstruction: KMBLENavigationInstruction) {
+    func navigationSimulator(_ naviagtionSimulator: KMBLENavigationSimulator, didSendInstruction: KMBLENavigationInstruction) {
         self.errorPopupShown = false
     }
     
-    func navigationSimulator(naviagtionSimulator: KMBLENavigationSimulator, didFailSendingInstruction: KMBLENavigationInstruction, connectionErrorType: KMBLEConnectionErrorType) {
+    func navigationSimulator(_ naviagtionSimulator: KMBLENavigationSimulator, didFailSendingInstruction: KMBLENavigationInstruction, connectionErrorType: KMBLEConnectionErrorType) {
         if errorPopupShown == true {
             return
         }

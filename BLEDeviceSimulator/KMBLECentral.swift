@@ -30,17 +30,17 @@ class KMBLECentral : NSObject {
     weak var delegate : KMBLECentralDelegate?
     weak var dataDelegate : KMBLEDataDelegate?
     
-    private let restoreKey = "KMBLECentralRestoreKey"
-    private static let navigationServiceUUID = "71C1E128-D92F-4FA8-A2B2-0F171DB3436C"
-    private let navigationServiceNotifyCharacteristicUUID = "503DD605-9BCB-4F6E-B235-270A57483026"
-    private let navigationServiceHeartbeatWriteCharacteristicUUID = "6D75DBF0-D763-4147-942A-D97B1BC700CF"
+    fileprivate let restoreKey = "KMBLECentralRestoreKey"
+    fileprivate static let navigationServiceUUID = "71C1E128-D92F-4FA8-A2B2-0F171DB3436C"
+    fileprivate let navigationServiceNotifyCharacteristicUUID = "503DD605-9BCB-4F6E-B235-270A57483026"
+    fileprivate let navigationServiceHeartbeatWriteCharacteristicUUID = "6D75DBF0-D763-4147-942A-D97B1BC700CF"
     
     
-    private var centralManager : CBCentralManager!
-    private var foundPeripherals : [CBPeripheral]?
-    private var connectedPeripheral : CBPeripheral?
-    private var observedCharacteristic : CBCharacteristic?
-    private var writeCharacteristic : CBCharacteristic?
+    fileprivate var centralManager : CBCentralManager!
+    fileprivate var foundPeripherals : [CBPeripheral]?
+    fileprivate var connectedPeripheral : CBPeripheral?
+    fileprivate var observedCharacteristic : CBCharacteristic?
+    fileprivate var writeCharacteristic : CBCharacteristic?
     
     private var knownPeripheralIds : [String]?
     private let knownPeripheralIdsUserDefaultsKey = "KMBLECentralKnowPeripheralIdsUserDefaultsKey"
@@ -49,18 +49,26 @@ class KMBLECentral : NSObject {
         super.init()
         
         knownPeripheralIds = loadKnownPeripheralsFromUserDefaults()
-        centralManager = CBCentralManager(delegate: self, queue: dispatch_get_main_queue(), options: [CBCentralManagerOptionRestoreIdentifierKey: restoreKey])
+        centralManager = CBCentralManager(delegate: self, queue: DispatchQueue.main, options: [CBCentralManagerOptionRestoreIdentifierKey: restoreKey])
     }
     
     func startDiscovery() {
         foundPeripherals = nil
         if #available(iOS 9.0, *) {
-            if ( centralManager.state.rawValue == CBCentralManagerState.PoweredOn.rawValue && centralManager.isScanning == false) {
-                centralManager.scanForPeripheralsWithServices([CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
+            if #available(iOS 10.0, *) {
+                if (centralManager.state == CBManagerState.poweredOn && centralManager.isScanning == false) {
+                    centralManager.scanForPeripherals(withServices: [CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
+                }
+            } else {
+                // Fallback on earlier versions
             }
         } else {
-            if ( centralManager.state.rawValue == CBCentralManagerState.PoweredOn.rawValue ) {
-                centralManager.scanForPeripheralsWithServices([CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
+            if #available(iOS 10.0, *) {
+                if (centralManager.state == CBManagerState.poweredOn) {
+                    centralManager.scanForPeripherals(withServices: [CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
+                }
+            } else {
+                // Fallback on earlier versions
             }
         }
     }
@@ -81,15 +89,15 @@ class KMBLECentral : NSObject {
             var uuids = [NSUUID]()
             
             for idString in knownPeripheralIds {
-                uuids.append(NSUUID(UUIDString: idString)!)
+                uuids.append(NSUUID(uuidString: idString)!)
             }
             
-            let peripherals = centralManager.retrievePeripheralsWithIdentifiers(uuids)
+            let peripherals = centralManager.retrievePeripherals(withIdentifiers: uuids as [UUID])
             foundPeripherals = peripherals
             
             if let foundPeripherals = foundPeripherals {
                 for peripheral in foundPeripherals {
-                    connect(peripheral)
+                    connect(peripheral: peripheral)
                 }
             }
             
@@ -98,19 +106,19 @@ class KMBLECentral : NSObject {
     }
     
     func connect(peripheral: CBPeripheral) {
-        DDLogInfo("trying to connect to peripheral \(peripheral.identifier.UUIDString)")
+        DDLogInfo("trying to connect to peripheral \(peripheral.identifier.uuidString)")
         stopDiscovery()
-        centralManager.connectPeripheral(peripheral, options: nil)
+        centralManager.connect(peripheral, options: nil)
     }
     
     func connectedPeripherals() -> [CBPeripheral] {
-        return centralManager.retrieveConnectedPeripheralsWithServices([CBUUID(string: KMBLECentral.navigationServiceUUIDString())])
+        return centralManager.retrieveConnectedPeripherals(withServices: [CBUUID(string: KMBLECentral.navigationServiceUUIDString())])
     }
     
     func disconnectPeripherals() {
         if let connectedPeripheral = connectedPeripheral {
             if let observedCharacteristic = observedCharacteristic {
-                connectedPeripheral.setNotifyValue(false, forCharacteristic: observedCharacteristic)
+                connectedPeripheral.setNotifyValue(false, for: observedCharacteristic)
                 self.observedCharacteristic = nil
             }
             centralManager.cancelPeripheralConnection(connectedPeripheral)
@@ -124,9 +132,9 @@ class KMBLECentral : NSObject {
     //MARK: private func
     
     private func loadKnownPeripheralsFromUserDefaults() -> [String] {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults = UserDefaults.standard
         var idsArray : [String]
-        if let storedIds = userDefaults.arrayForKey(knownPeripheralIdsUserDefaultsKey) as? [String] {
+        if let storedIds = userDefaults.array(forKey: knownPeripheralIdsUserDefaultsKey) as? [String] {
             idsArray = storedIds
         } else {
             idsArray = [String]()
@@ -134,15 +142,15 @@ class KMBLECentral : NSObject {
         return idsArray
     }
     
-    private func addKnownPeripheralToUserDefaults(peripheralID: String) {
+    fileprivate func addKnownPeripheralToUserDefaults(peripheralID: String) {
         knownPeripheralIds = loadKnownPeripheralsFromUserDefaults()
         if knownPeripheralIds?.contains(peripheralID) == false {
-            if knownPeripheralIds?.count > 0 {
+            if (knownPeripheralIds?.count)! > 0 {
                 knownPeripheralIds?.removeAll()
             }
             knownPeripheralIds?.append(peripheralID)
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setObject(knownPeripheralIds, forKey: knownPeripheralIdsUserDefaultsKey)
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(knownPeripheralIds, forKey: knownPeripheralIdsUserDefaultsKey)
             userDefaults.synchronize()
         }
     }
@@ -150,15 +158,15 @@ class KMBLECentral : NSObject {
 
 extension KMBLECentral : CBCentralManagerDelegate {
     
-    @objc func centralManagerDidUpdateState(central: CBCentralManager) {
+    @objc func centralManagerDidUpdateState(_ central: CBCentralManager) {
          DDLogDebug("central manager \(central) switch to state \(central.state)")
         
-        if central.state == .PoweredOn {
+        if central.state == .poweredOn {
             restoreConnectionToLastKnownPeriperal()
         }
     }
     
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         if foundPeripherals == nil {
             foundPeripherals = [CBPeripheral]()
         }
@@ -167,13 +175,14 @@ extension KMBLECentral : CBCentralManagerDelegate {
             foundPeripherals.append(peripheral)
             
             if let delegate = delegate {
-                delegate.central(self, didDiscoverPeripherals: foundPeripherals)
+                delegate.central(central: self, didDiscoverPeripherals: foundPeripherals)
             }
         }
-        
+
+    
     }
     
-    func centralManager(central: CBCentralManager, willRestoreState dict: [String : AnyObject]) {
+    func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
         let peripherals = dict[CBCentralManagerRestoredStatePeripheralsKey] as? [CBPeripheral]
         
         let navigationServiceUUIDObject = CBUUID(string: KMBLECentral.navigationServiceUUIDString())
@@ -181,7 +190,7 @@ extension KMBLECentral : CBCentralManagerDelegate {
             var found = false
             if let services = peripheral.services {
                 for service in services {
-                    if service.UUID == navigationServiceUUIDObject {
+                    if service.uuid == navigationServiceUUIDObject {
                         found = true
                         break
                     }
@@ -192,26 +201,26 @@ extension KMBLECentral : CBCentralManagerDelegate {
         foundPeripherals = recoverPeripherals
     }
     
-    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
-        DDLogInfo("did connect to peripheral \(peripheral.identifier.UUIDString)")
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        DDLogInfo("did connect to peripheral \(peripheral.identifier.uuidString)")
         connectedPeripheral = peripheral
         peripheral.delegate = self
         
-        self.addKnownPeripheralToUserDefaults(peripheral.identifier.UUIDString)
+        self.addKnownPeripheralToUserDefaults(peripheralID: peripheral.identifier.uuidString)
         peripheral.discoverServices(nil)
     }
     
-    func centralManager(central: CBCentralManager, didFailToConnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
         DDLogError("error while connecting to peripheral \(error?.localizedDescription)")
         if let delegate = delegate {
-            delegate.central(self, didFailConnectToPeripheral: peripheral, error: error)
+            delegate.central(central: self, didFailConnectToPeripheral: peripheral, error: error as NSError?)
         }
     }
     
-    func centralManager(central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: NSError?) {
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         DDLogInfo("disconnect from peripheral")
         if connectedPeripheral == peripheral {
-            delegate?.central(self, didDisconnectFromPeripheral: connectedPeripheral!)
+            delegate?.central(central: self, didDisconnectFromPeripheral: connectedPeripheral!)
             connectedPeripheral = nil
         }
     }
@@ -219,11 +228,11 @@ extension KMBLECentral : CBCentralManagerDelegate {
 
 extension KMBLECentral: CBPeripheralDelegate {
     
-    func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         if let error = error {
             DDLogError("error while connecting to peripheral \(error.localizedDescription)")
             if let delegate = delegate {
-                delegate.central(self, didFailConnectToPeripheral: peripheral, error: error)
+                delegate.central(central: self, didFailConnectToPeripheral: peripheral, error: error as NSError?)
             }
             return
         }
@@ -231,13 +240,13 @@ extension KMBLECentral: CBPeripheralDelegate {
         if let services = peripheral.services {
             if services.count == 0 {
                 let error = NSError(domain: "KMBLECentralErrorDomain", code: 0, userInfo: [NSLocalizedFailureReasonErrorKey: "No services found for device"])
-                self.delegate?.central(self, didFailConnectToPeripheral: peripheral, error: error)
+                self.delegate?.central(central: self, didFailConnectToPeripheral: peripheral, error: error)
             } else {
                 for service in services {
-                    DDLogDebug("Discovered service \(service.UUID.UUIDString)")
-                    if service.UUID.UUIDString == KMBLECentral.navigationServiceUUIDString() {
-                        DDLogInfo("Check Characteristics for service \(service.UUID.UUIDString)")
-                        peripheral.discoverCharacteristics(nil, forService: service)
+                    DDLogDebug("Discovered service \(service.uuid.uuidString)")
+                    if service.uuid.uuidString == KMBLECentral.navigationServiceUUIDString() {
+                        DDLogInfo("Check Characteristics for service \(service.uuid.uuidString)")
+                        peripheral.discoverCharacteristics(nil, for: service)
                         return
                     }
                 }
@@ -245,49 +254,51 @@ extension KMBLECentral: CBPeripheralDelegate {
         }
     }
     
-    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         if let characterisistics = service.characteristics {
             for characterisistic in characterisistics {
-                DDLogDebug("Discovered characteristic \(characterisistic.UUID.UUIDString)")
-                if characterisistic.UUID.UUIDString == navigationServiceNotifyCharacteristicUUID {
+                DDLogDebug("Discovered characteristic \(characterisistic.uuid.uuidString)")
+                if characterisistic.uuid.uuidString == navigationServiceNotifyCharacteristicUUID {
                     self.observedCharacteristic = characterisistic
-                    peripheral.setNotifyValue(true, forCharacteristic: characterisistic)
+                    peripheral.setNotifyValue(true, for: characterisistic)
                     
-                    DDLogInfo("Subscriped for changes on \(characterisistic.UUID.UUIDString)")
+                    DDLogInfo("Subscriped for changes on \(characterisistic.uuid.uuidString)")
                     
                     if let delegate = delegate {
-                        delegate.central(self, didConnectToPeripheral: peripheral)
+                        delegate.central(central: self, didConnectToPeripheral: peripheral)
                     }
                 }
                 
-                if characterisistic.UUID.UUIDString == navigationServiceHeartbeatWriteCharacteristicUUID {
+                if characterisistic.uuid.uuidString == navigationServiceHeartbeatWriteCharacteristicUUID {
                     self.writeCharacteristic = characterisistic
                 }
             }
         }
     }
     
-    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic, error: NSError?) {
-        DDLogInfo("peripheral \(peripheral.identifier.UUIDString) didUpdateValueForCharacteristic \(characteristic) error: \(error?.localizedDescription)")
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        DDLogInfo("peripheral \(peripheral.identifier.uuidString) didUpdateValueForCharacteristic \(characteristic) error: \(error?.localizedDescription)")
         
-        if characteristic.UUID.UUIDString == navigationServiceNotifyCharacteristicUUID {
-            if characteristic.properties == CBCharacteristicProperties.Read || characteristic.value == nil || characteristic.value?.length < 20 {
+        if characteristic.uuid.uuidString == navigationServiceNotifyCharacteristicUUID {
+            var valueLength = 0
+            if let value = characteristic.value { valueLength = value.count }
+            if characteristic.properties == CBCharacteristicProperties.read || characteristic.value == nil || valueLength < 20 {
                 //data is not complete. I have to read it first.
                 DDLogInfo("request data to read")
-                peripheral.readValueForCharacteristic(characteristic)
+                peripheral.readValue(for: characteristic)
             } else {
                 DDLogInfo("got data to display. raw data: \(characteristic.value)")
                 if let data = characteristic.value {
-                    let dataObject = KMBLENavigationObject(data: data)
+                    let dataObject = KMBLENavigationObject(data: data as NSData)
                     DDLogInfo("parsed data \(dataObject)")
                     
-                    dispatch_async(dispatch_get_main_queue(), { 
-                        self.dataDelegate?.centralDidReceiveDataObject(dataObject)
+                    DispatchQueue.main.async(execute: {
+                        self.dataDelegate?.centralDidReceiveDataObject(dataObject: dataObject)
                     })
                 }
             }
         } else {
-            DDLogDebug("got data for unknow characteristic \(characteristic.UUID.UUIDString)")
+            DDLogDebug("got data for unknow characteristic \(characteristic.uuid.uuidString)")
         }
     }
     
