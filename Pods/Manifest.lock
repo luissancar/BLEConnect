@@ -15,24 +15,14 @@ PODS:
   - NBUCore (2.0.5)
 
 DEPENDENCIES:
-  - CocoaLumberjack/Swift (from `https://github.com/ffried/CocoaLumberjack.git`, branch `swift3.0`)
+  - CocoaLumberjack/Swift (= 3.0.0)
   - LumberjackConsole (= 2.4.3)
-
-EXTERNAL SOURCES:
-  CocoaLumberjack:
-    :branch: swift3.0
-    :git: https://github.com/ffried/CocoaLumberjack.git
-
-CHECKOUT OPTIONS:
-  CocoaLumberjack:
-    :commit: 5ca1063c1f8c3a7f1f443dbca8ec56e406da06f1
-    :git: https://github.com/ffried/CocoaLumberjack.git
 
 SPEC CHECKSUMS:
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
   LumberjackConsole: 81bad3312fea315b8a17e53926b014f032ec1f44
   NBUCore: bfdce78c97f2a9566c97082f44157547223b22a6
 
-PODFILE CHECKSUM: 204bc262b35e9e19f2154caff7b27385c46fcbaf
+PODFILE CHECKSUM: 9c6bb978b68df719aa78d644d8173b12476427b6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2

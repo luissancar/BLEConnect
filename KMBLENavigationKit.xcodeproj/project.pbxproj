@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32AE0CACC6BBFB328F8EF15E /* Pods_KomootAppSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0842ED14D4B90538EDE21A1 /* Pods_KomootAppSimulatorTests.framework */; };
 		3918E8CD1D3F9A7A0069DC30 /* KMBLENavigationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918E8CC1D3F9A7A0069DC30 /* KMBLENavigationObject.swift */; };
 		3918E8D51D3FB6C40069DC30 /* BLEDeviceSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918E8D41D3FB6C40069DC30 /* BLEDeviceSimulatorTests.swift */; };
 		3918E8DC1D3FB7190069DC30 /* KMBLENavigationDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397D360C1D3E7F760066B5EF /* KMBLENavigationDataObject.swift */; };
@@ -39,10 +40,9 @@
 		39D174871D4A2C5900E13E02 /* KMBLEEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918E8E11D3FD0230069DC30 /* KMBLEEnums.swift */; };
 		39E2D7501D41090400791960 /* navigationSimulation.csv in Resources */ = {isa = PBXBuildFile; fileRef = 39E2D74F1D41090400791960 /* navigationSimulation.csv */; };
 		48E59C11688E0682D0856F73 /* Pods_KMBLENavigationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757A640C3FF17E14F82C33B9 /* Pods_KMBLENavigationKit.framework */; };
-		4ACE3755521530B72390DE87 /* Pods_KomootAppSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FD635CD8040EC02D91A0EA /* Pods_KomootAppSimulator.framework */; };
 		8FA06AF4865781891C7A3E44 /* Pods_BLEDeviceSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A2B1FE6DE23202D4879779 /* Pods_BLEDeviceSimulator.framework */; };
-		A936C3EDDEFD32878177562A /* Pods_KomootAppSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0842ED14D4B90538EDE21A1 /* Pods_KomootAppSimulatorTests.framework */; };
 		B1C781536C1150A7B3F9EC18 /* Pods_BLEDeviceSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEA8317B06178291D5422E /* Pods_BLEDeviceSimulatorTests.framework */; };
+		CBF3487EE8F0D990869D7BB2 /* Pods_KomootAppSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FD635CD8040EC02D91A0EA /* Pods_KomootAppSimulator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,16 +131,16 @@
 		6F81F3C17D58F9A047188A15 /* Pods-BLEDeviceSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulatorTests/Pods-BLEDeviceSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		74B06B30CD3C03221D19299F /* Pods-KomootAppSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.release.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		757A640C3FF17E14F82C33B9 /* Pods_KMBLENavigationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMBLENavigationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		78336A668174E1FC985C390F /* Pods-KomootAppSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		902C6AD9910FBBE5DD3C6332 /* Pods-KomootAppSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA7EA2B80650A8522F4CD35C /* Pods-BLEDeviceSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		ABCEA8317B06178291D5422E /* Pods_BLEDeviceSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEDeviceSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0842ED14D4B90538EDE21A1 /* Pods_KomootAppSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootAppSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB5F63B02CD872BD2AE59EDC /* Pods-KomootAppSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8BA350747BC43CD3CC7E80C /* Pods-KomootAppSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		CBA0FD7EC355D342C4F31E2F /* Pods-BLEDeviceSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator.debug.xcconfig"; sourceTree = "<group>"; };
+		D7340D338200D806D1E3C52B /* Pods-KomootAppSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8A2B1FE6DE23202D4879779 /* Pods_BLEDeviceSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEDeviceSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA5B7EEF130129524CF4C026 /* Pods-KMBLENavigationKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMBLENavigationKit.release.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit.release.xcconfig"; sourceTree = "<group>"; };
-		E1DA5688C0F9703EE5B09FE3 /* Pods-KomootAppSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.release.xcconfig"; sourceTree = "<group>"; };
-		EF595DADE70A37B0E54AFF4C /* Pods-KomootAppSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.debug.xcconfig"; sourceTree = "<group>"; };
+		F277CBF7C4EEF24DAFA0C515 /* Pods-KomootAppSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A936C3EDDEFD32878177562A /* Pods_KomootAppSimulatorTests.framework in Frameworks */,
+				32AE0CACC6BBFB328F8EF15E /* Pods_KomootAppSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A564981D3D1DA0007D303D /* KMBLENavigationKit.framework in Frameworks */,
-				4ACE3755521530B72390DE87 /* Pods_KomootAppSimulator.framework in Frameworks */,
+				CBF3487EE8F0D990869D7BB2 /* Pods_KomootAppSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,10 +315,10 @@
 				AA7EA2B80650A8522F4CD35C /* Pods-BLEDeviceSimulator.release.xcconfig */,
 				19FD85B1563E094F67E8BF8B /* Pods-KMBLENavigationKit.debug.xcconfig */,
 				2C2FDE8236CC5A3D491447BB /* Pods-KMBLENavigationKit.release.xcconfig */,
-				EF595DADE70A37B0E54AFF4C /* Pods-KomootAppSimulator.debug.xcconfig */,
-				E1DA5688C0F9703EE5B09FE3 /* Pods-KomootAppSimulator.release.xcconfig */,
-				CB5F63B02CD872BD2AE59EDC /* Pods-KomootAppSimulatorTests.debug.xcconfig */,
-				78336A668174E1FC985C390F /* Pods-KomootAppSimulatorTests.release.xcconfig */,
+				C8BA350747BC43CD3CC7E80C /* Pods-KomootAppSimulator.debug.xcconfig */,
+				F277CBF7C4EEF24DAFA0C515 /* Pods-KomootAppSimulator.release.xcconfig */,
+				D7340D338200D806D1E3C52B /* Pods-KomootAppSimulatorTests.debug.xcconfig */,
+				902C6AD9910FBBE5DD3C6332 /* Pods-KomootAppSimulatorTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -362,12 +362,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3918E8F91D40C1D10069DC30 /* Build configuration list for PBXNativeTarget "KomootAppSimulatorTests" */;
 			buildPhases = (
-				6F5FA10C4A0C9EC970E2C72F /* [CP] Check Pods Manifest.lock */,
+				55211CA0AA60AD81AFCDF2DA /* [CP] Check Pods Manifest.lock */,
 				3918E8EE1D40C1D10069DC30 /* Sources */,
 				3918E8EF1D40C1D10069DC30 /* Frameworks */,
 				3918E8F01D40C1D10069DC30 /* Resources */,
-				CB9EF6FF39669546D5654272 /* [CP] Embed Pods Frameworks */,
-				C23CD67CBBCF1D96C6B80F5A /* [CP] Copy Pods Resources */,
+				FC9A2BB1BAC4BB5591EC07DB /* [CP] Embed Pods Frameworks */,
+				23A627A6B470CCD6D01908F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -403,13 +403,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39A5647A1D3CE764007D303D /* Build configuration list for PBXNativeTarget "KomootAppSimulator" */;
 			buildPhases = (
-				4717E7CF31B414FCB1B0C8D6 /* [CP] Check Pods Manifest.lock */,
+				BFAD812AE7048D238B55FF80 /* [CP] Check Pods Manifest.lock */,
 				39A5645C1D3CE764007D303D /* Sources */,
 				39A5645D1D3CE764007D303D /* Frameworks */,
 				39A5645E1D3CE764007D303D /* Resources */,
 				39A5649D1D3D31BF007D303D /* Embed Frameworks */,
-				F24DB077300A3D814F303F2E /* [CP] Embed Pods Frameworks */,
-				A072C7A331BCD101BBEE7E22 /* [CP] Copy Pods Resources */,
+				745DE934434799E8BE00032F /* [CP] Embed Pods Frameworks */,
+				81E9A2FF66E2C9029192010B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -448,16 +448,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = komoot;
 				TargetAttributes = {
 					3918E8D11D3FB6C30069DC30 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M999CM95TV;
 						LastSwiftMigration = 0800;
 						TestTargetID = 39A564831D3CE77D007D303D;
 					};
 					3918E8F11D40C1D10069DC30 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M999CM95TV;
 						LastSwiftMigration = 0800;
 						TestTargetID = 39A5645F1D3CE764007D303D;
 					};
@@ -467,6 +469,7 @@
 					};
 					39A5645F1D3CE764007D303D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M999CM95TV;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -476,6 +479,7 @@
 					};
 					39A564831D3CE77D007D303D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M999CM95TV;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -582,7 +586,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		23A627A6B470CCD6D01908F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		45D64549617779AF9FFFD513 /* [CP] Check Pods Manifest.lock */ = {
@@ -597,22 +616,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4717E7CF31B414FCB1B0C8D6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		477D1F42E9045128C6B9646E /* [CP] Copy Pods Resources */ = {
@@ -630,7 +634,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLEDeviceSimulatorTests/Pods-BLEDeviceSimulatorTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6F5FA10C4A0C9EC970E2C72F /* [CP] Check Pods Manifest.lock */ = {
+		55211CA0AA60AD81AFCDF2DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -642,10 +646,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A072C7A331BCD101BBEE7E22 /* [CP] Copy Pods Resources */ = {
+		745DE934434799E8BE00032F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81E9A2FF66E2C9029192010B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -687,37 +706,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C23CD67CBBCF1D96C6B80F5A /* [CP] Copy Pods Resources */ = {
+		BFAD812AE7048D238B55FF80 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB9EF6FF39669546D5654272 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		CFCA31609E848D88CDF27F43 /* [CP] Copy Pods Resources */ = {
@@ -750,7 +754,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F24DB077300A3D814F303F2E /* [CP] Embed Pods Frameworks */ = {
+		FC9A2BB1BAC4BB5591EC07DB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -762,7 +766,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -883,6 +887,7 @@
 			baseConfigurationReference = 6F81F3C17D58F9A047188A15 /* Pods-BLEDeviceSimulatorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M999CM95TV;
 				INFOPLIST_FILE = BLEDeviceSimulatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -898,6 +903,7 @@
 			baseConfigurationReference = 67DBE8B1319169487F9501E5 /* Pods-BLEDeviceSimulatorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M999CM95TV;
 				INFOPLIST_FILE = BLEDeviceSimulatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -910,9 +916,10 @@
 		};
 		3918E8FA1D40C1D10069DC30 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB5F63B02CD872BD2AE59EDC /* Pods-KomootAppSimulatorTests.debug.xcconfig */;
+			baseConfigurationReference = D7340D338200D806D1E3C52B /* Pods-KomootAppSimulatorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M999CM95TV;
 				INFOPLIST_FILE = KomootAppSimulatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -925,9 +932,10 @@
 		};
 		3918E8FB1D40C1D10069DC30 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78336A668174E1FC985C390F /* Pods-KomootAppSimulatorTests.release.xcconfig */;
+			baseConfigurationReference = 902C6AD9910FBBE5DD3C6332 /* Pods-KomootAppSimulatorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = M999CM95TV;
 				INFOPLIST_FILE = KomootAppSimulatorTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -952,8 +960,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -982,6 +992,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1002,8 +1013,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1024,6 +1037,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1037,6 +1052,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1051,7 +1067,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1061,6 +1076,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1074,37 +1090,36 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.komoot.KMBLENavigationKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		39A5647B1D3CE764007D303D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF595DADE70A37B0E54AFF4C /* Pods-KomootAppSimulator.debug.xcconfig */;
+			baseConfigurationReference = C8BA350747BC43CD3CC7E80C /* Pods-KomootAppSimulator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				DEVELOPMENT_TEAM = M999CM95TV;
 				INFOPLIST_FILE = KomootAppSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.komoot.KomootAppSimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		39A5647C1D3CE764007D303D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1DA5688C0F9703EE5B09FE3 /* Pods-KomootAppSimulator.release.xcconfig */;
+			baseConfigurationReference = F277CBF7C4EEF24DAFA0C515 /* Pods-KomootAppSimulator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				DEVELOPMENT_TEAM = M999CM95TV;
 				INFOPLIST_FILE = KomootAppSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.komoot.KomootAppSimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1112,13 +1127,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CBA0FD7EC355D342C4F31E2F /* Pods-BLEDeviceSimulator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M999CM95TV;
 				INFOPLIST_FILE = BLEDeviceSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.komoot.BLEDeviceSimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1126,13 +1142,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA7EA2B80650A8522F4CD35C /* Pods-BLEDeviceSimulator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M999CM95TV;
 				INFOPLIST_FILE = BLEDeviceSimulator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.komoot.BLEDeviceSimulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

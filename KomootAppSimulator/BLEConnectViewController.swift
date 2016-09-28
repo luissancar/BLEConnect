@@ -8,7 +8,6 @@
 
 import UIKit
 import KMBLENavigationKit
-import LumberjackConsole
 import CocoaLumberjack
 
 class BLEConnectViewController: UIViewController {
@@ -63,7 +62,8 @@ class BLEConnectViewController: UIViewController {
     @IBAction func handleTapOnSendEventButton(_ sender: AnyObject) {
         if let bleConnector = bleConnector {
             let testEvent = KMBLENavigationDataObject(direction: NavigationDirection(rawValue: UInt8(arc4random_uniform(31)))!, distance: UInt(arc4random_uniform(1500)), streetname: "Kiepenheuerallee \(arc4random_uniform(32))")
-            bleConnector.sendNavigationDataObject(testEvent)
+            let error = bleConnector.sendNavigationDataObject(testEvent)
+            print(error)
         }
     }
     
