@@ -432,7 +432,7 @@ extension KMBLEConnector: CBPeripheralManagerDelegate {
                     peripheral.respond(to: request, withResult: CBATTError.Code._ErrorType.invalidOffset)
                     return
                 }
-                request.value = dataValue.subdata(in: Range(uncheckedBounds:(request.offset, dataValue.count - request.offset)))
+                request.value = dataValue.subdata(in: Range(uncheckedBounds:(request.offset, dataValue.count)))
                 peripheral.respond(to: request, withResult: CBATTError.Code._ErrorType.success)
                 DispatchQueue.main.async(execute: { 
                     self.restartConnectionLostTimer()
