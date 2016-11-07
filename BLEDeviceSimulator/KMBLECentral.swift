@@ -60,15 +60,13 @@ class KMBLECentral : NSObject {
                     centralManager.scanForPeripherals(withServices: [CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
                 }
             } else {
-                // Fallback on earlier versions
-            }
-        } else {
-            if #available(iOS 10.0, *) {
-                if (centralManager.state == CBManagerState.poweredOn) {
+                if (centralManager.state.rawValue == CBCentralManagerState.poweredOn.rawValue && centralManager.isScanning == false) {
                     centralManager.scanForPeripherals(withServices: [CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
                 }
-            } else {
-                // Fallback on earlier versions
+            }
+        } else {
+            if (centralManager.state.rawValue == CBCentralManagerState.poweredOn.rawValue) {
+                centralManager.scanForPeripherals(withServices: [CBUUID(string: KMBLECentral.navigationServiceUUIDString())], options: nil)
             }
         }
     }

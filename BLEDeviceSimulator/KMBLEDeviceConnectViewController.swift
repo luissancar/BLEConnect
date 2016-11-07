@@ -59,7 +59,7 @@ class KMBLEDeviceConnectViewController: UIViewController {
     //MARK: Actions
     
     
-    @IBAction func handleTapOnDismissButton(sender: AnyObject) {
+    @IBAction func handleTapOnDismissButton() {
         dismissViewController()
     }
     
