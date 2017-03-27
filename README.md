@@ -1,6 +1,6 @@
 ![](assets/Komoot-ble-github-header.png)
 
-##BLEConnect
+## BLEConnect
 
 With komoot BLE Connect, you can enable your BLE device to show navigation instructions for cycling, running and outdoor routes. [https://www.komoot.de/partnerships/connect](https://www.komoot.de/partnerships/connect)
 
@@ -12,41 +12,41 @@ All you need to implement this is found here:
 - [Transferred data](#headerData)  
 
 <a name="headerHowItWorks"></a>
-##How it works
+## How it works
 
-###Connect to komoot App
+### Connect to komoot App
 <div style="text-align:center"><img src="assets/BLE-Connect.png" width="673" /></div>
 
-####Komoot App
+#### Komoot App
 The user activates BLE Connect inside the komoot app settings. When doing so, the app starts advertising the komoot navigation BLE service and tells the user to start pairing via their external BLE device. 
 The komoot app stops advertising once the connection to the characteristic is established.
 
-####Your device / what you implement
+#### Your device / what you implement
 The external BLE device is responsible to establish the connection and subscribing to the komoot navigation service characteristic. Your device should search for the komoot navigation service (UUID defined below). Otherwise it might be possible that you won’t find the komoot app while the app is in background (not visible).
 
 **Please note**: The advertisement data is different while the app is running in background. For details please check [Apple developer documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html#//apple_ref/doc/uid/TP40013257-CH7-SW1).
 
 
 
-###Receive Navigation Instructions
+### Receive Navigation Instructions
 <div style="text-align:center"><img src="assets/BLE-SendNavigation.png" width="673" /></div>
 
-####Komoot App
+#### Komoot App
 The komoot app sends instructions data ~1 per second when a navigation gets started (or resumed) in the komoot app. How data is transferred is described in detail [below](#headerData).
 
-####Your device / what you implement
+#### Your device / what you implement
 The komoot app announces new data by using notifications. Once you receive a notification, you need to start a read request to get the full data object of the last navigation instruction. 
 
-###Reconnect and connection status
+### Reconnect and connection status
 
-####Komoot App
+#### Komoot App
 The komoot app repeats the last navigation instruction every 2 seconds (might be changed in the future). It observes your read requests, and if there hasn’t been a read request for a longer time (5 sec. Might be changed in the future), the app assumes that the connection got lost and will start advertising the service again. Your device configured as a BLE central should then initiate a reconnect.
 
-####Your device / what you implement
+#### Your device / what you implement
 You have to start the scanning for the navigation service once you detect the connection to the peripheral got lost. After a few seconds, the komoot app will start the advertising.
 
 <a name="headerSimulatorApps"></a>
-##The Simulator Apps
+## The Simulator Apps
 
 To make development easier for you, we created two simulator apps you can find in this repository. Just clone the repository and open the Xcode Project to start the simulators on your iOS device. 
 
@@ -58,7 +58,7 @@ To make development easier for you, we created two simulator apps you can find i
 | Simulates the behavior of the komoot app. (BLE Peripheral) | Simulates a BLE device that receives the BLE Navigation Service. (BLE Central) |
 
 <a name="headerBLESpecification"></a>
-##BLE Service Specification
+## BLE Service Specification
 
 | UUID | Description  | Access  |
 |---|---|---|
@@ -66,7 +66,7 @@ To make development easier for you, we created two simulator apps you can find i
 |503DD605-9BCB-4F6E-B235-270A57483026|GATT Characteristic to subscribe for navigation updates|Notify, Readonly|
 
 <a name="headerData"></a>
-##Transferred Data
+## Transferred Data
 When you read the GATT characteristic after you got notified, you will receive the following data.
 
 ![Data structure](assets/BLE-Data.png)
@@ -77,7 +77,7 @@ When you read the GATT characteristic after you got notified, you will receive t
 - [Distance](#data_distance) (UInt32)
 
 <a name="data_identifier"></a>
-###Identifier
+### Identifier
 
 UInt32 value to identify a single navigation instruction. Use this identifier for sending the read request to the characteristic. If we get a read request without this identifier, we will deliver the last data object.
 
@@ -127,14 +127,14 @@ You can download the arrows [here](assets/nav-icons/navigationArrows.zip) or mak
 |No image|31…n|We might enhance the table in future versions.|
 
 <a name="data_street"></a>
-###Street
+### Street
 <img src="assets/street.jpg" width="300" />
 
 The street is provided as UTF-8 string. The street is starting at byte 21 until the end of the data object.
 
 
 <a name="data_distance"></a>
-###Distance
+### Distance
 
 <img src="assets/distance.jpg" width="300" />
 
