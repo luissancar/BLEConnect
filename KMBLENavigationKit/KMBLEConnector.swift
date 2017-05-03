@@ -8,9 +8,6 @@
 
 import Foundation
 import CoreBluetooth
-#if DEBUG
-//import CocoaLumberjack
-#endif
 
 @objc public protocol KMBLEConnectorDelegate {
     func bleConnector(_ bleConnector: KMBLEConnector, didFailToStartAdvertisingError: NSError)
@@ -103,7 +100,6 @@ public enum KMBLEConnectionErrorType: Error {
         
         assert(backgroundPeripheral == true, "Activate background-mode \"bluetooth-peripheral\"")
     }
-    
     
     /** 
      Call this to shutdown the bluetooth system. It will also close the connection to the central.

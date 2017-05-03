@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var bleConnector : KMBLEConnector?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         bleConnector = KMBLEConnector(advertisingIdentifier: "Komoot BLE App Simulator")
         let setuped = bleConnector?.didFinishLaunchingWithOptions(launchOptions)

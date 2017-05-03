@@ -38,6 +38,10 @@
 		39A5649A1D3D31BF007D303D /* KMBLENavigationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39A564421D3CE727007D303D /* KMBLENavigationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39D174871D4A2C5900E13E02 /* KMBLEEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918E8E11D3FD0230069DC30 /* KMBLEEnums.swift */; };
 		39E2D7501D41090400791960 /* navigationSimulation.csv in Resources */ = {isa = PBXBuildFile; fileRef = 39E2D74F1D41090400791960 /* navigationSimulation.csv */; };
+		7C868E87B634E6E984757E80 /* Pods_BLEDeviceSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A2ADE4A8C692DAB202D1DB /* Pods_BLEDeviceSimulator.framework */; };
+		DC33246843E19526C5EBF9C3 /* Pods_KomootAppSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 563048E4AFCA378483980064 /* Pods_KomootAppSimulator.framework */; };
+		F7E67F2A1EF3B2C21FF0B1B2 /* Pods_BLEDeviceSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97017706A58867F3D6DA7341 /* Pods_BLEDeviceSimulatorTests.framework */; };
+		F8EC57521986C031E1E0A99A /* Pods_KomootAppSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5021539414FC42FD4D8A275 /* Pods_KomootAppSimulatorTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		19FD85B1563E094F67E8BF8B /* Pods-KMBLENavigationKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMBLENavigationKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit.debug.xcconfig"; sourceTree = "<group>"; };
-		2C2FDE8236CC5A3D491447BB /* Pods-KMBLENavigationKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMBLENavigationKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit.release.xcconfig"; sourceTree = "<group>"; };
+		02A2ADE4A8C692DAB202D1DB /* Pods_BLEDeviceSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEDeviceSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3918E8CC1D3F9A7A0069DC30 /* KMBLENavigationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMBLENavigationObject.swift; sourceTree = "<group>"; };
 		3918E8D21D3FB6C30069DC30 /* BLEDeviceSimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEDeviceSimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3918E8D41D3FB6C40069DC30 /* BLEDeviceSimulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEDeviceSimulatorTests.swift; sourceTree = "<group>"; };
@@ -115,9 +118,12 @@
 		39A564921D3CE77D007D303D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39A564961D3D1410007D303D /* KMBLEConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMBLEConnector.swift; sourceTree = "<group>"; };
 		39E2D74F1D41090400791960 /* navigationSimulation.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = navigationSimulation.csv; sourceTree = "<group>"; };
+		563048E4AFCA378483980064 /* Pods_KomootAppSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootAppSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67DBE8B1319169487F9501E5 /* Pods-BLEDeviceSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulatorTests/Pods-BLEDeviceSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		6F81F3C17D58F9A047188A15 /* Pods-BLEDeviceSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulatorTests/Pods-BLEDeviceSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		902C6AD9910FBBE5DD3C6332 /* Pods-KomootAppSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		97017706A58867F3D6DA7341 /* Pods_BLEDeviceSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEDeviceSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5021539414FC42FD4D8A275 /* Pods_KomootAppSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootAppSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7EA2B80650A8522F4CD35C /* Pods-BLEDeviceSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		C8BA350747BC43CD3CC7E80C /* Pods-KomootAppSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		CBA0FD7EC355D342C4F31E2F /* Pods-BLEDeviceSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E67F2A1EF3B2C21FF0B1B2 /* Pods_BLEDeviceSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8EC57521986C031E1E0A99A /* Pods_KomootAppSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A564981D3D1DA0007D303D /* KMBLENavigationKit.framework in Frameworks */,
+				DC33246843E19526C5EBF9C3 /* Pods_KomootAppSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C868E87B634E6E984757E80 /* Pods_BLEDeviceSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +178,10 @@
 		325AA98DE9A4C9C8FEA92FBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02A2ADE4A8C692DAB202D1DB /* Pods_BLEDeviceSimulator.framework */,
+				97017706A58867F3D6DA7341 /* Pods_BLEDeviceSimulatorTests.framework */,
+				563048E4AFCA378483980064 /* Pods_KomootAppSimulator.framework */,
+				A5021539414FC42FD4D8A275 /* Pods_KomootAppSimulatorTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,8 +291,6 @@
 				67DBE8B1319169487F9501E5 /* Pods-BLEDeviceSimulatorTests.release.xcconfig */,
 				CBA0FD7EC355D342C4F31E2F /* Pods-BLEDeviceSimulator.debug.xcconfig */,
 				AA7EA2B80650A8522F4CD35C /* Pods-BLEDeviceSimulator.release.xcconfig */,
-				19FD85B1563E094F67E8BF8B /* Pods-KMBLENavigationKit.debug.xcconfig */,
-				2C2FDE8236CC5A3D491447BB /* Pods-KMBLENavigationKit.release.xcconfig */,
 				C8BA350747BC43CD3CC7E80C /* Pods-KomootAppSimulator.debug.xcconfig */,
 				F277CBF7C4EEF24DAFA0C515 /* Pods-KomootAppSimulator.release.xcconfig */,
 				D7340D338200D806D1E3C52B /* Pods-KomootAppSimulatorTests.debug.xcconfig */,
@@ -347,12 +359,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39A564561D3CE727007D303D /* Build configuration list for PBXNativeTarget "KMBLENavigationKit" */;
 			buildPhases = (
-				AFBF459962E5B651E07A25F4 /* [CP] Check Pods Manifest.lock */,
 				39A5643D1D3CE727007D303D /* Sources */,
 				39A5643E1D3CE727007D303D /* Frameworks */,
 				39A5643F1D3CE727007D303D /* Headers */,
 				39A564401D3CE727007D303D /* Resources */,
-				E19971FBE917ADE56352A48A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -654,21 +664,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLEDeviceSimulatorTests/Pods-BLEDeviceSimulatorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AFBF459962E5B651E07A25F4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		BFAD812AE7048D238B55FF80 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,21 +692,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E19971FBE917ADE56352A48A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC9A2BB1BAC4BB5591EC07DB /* [CP] Embed Pods Frameworks */ = {
@@ -1008,7 +988,6 @@
 		};
 		39A564571D3CE727007D303D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19FD85B1563E094F67E8BF8B /* Pods-KMBLENavigationKit.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1032,7 +1011,6 @@
 		};
 		39A564581D3CE727007D303D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C2FDE8236CC5A3D491447BB /* Pods-KMBLENavigationKit.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1087,7 +1065,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CBA0FD7EC355D342C4F31E2F /* Pods-BLEDeviceSimulator.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLEDeviceSimulator/Info.plist;
@@ -1102,7 +1079,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AA7EA2B80650A8522F4CD35C /* Pods-BLEDeviceSimulator.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BLEDeviceSimulator/Info.plist;
