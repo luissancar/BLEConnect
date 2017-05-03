@@ -14,12 +14,12 @@ class BLEDeviceSimulatorTests: XCTestCase {
     
     func testDecoding() {
         
-        let navigationObject = KMBLENavigationDataObject(direction:NavigationDirection.TurnStraight, distance: UInt(1234), streetname: "Lennéstraße")
+        let navigationObject = KMBLENavigationDataObject(direction:NavigationDirection.turnStraight, distance: UInt(1234), streetname: "Lennéstraße")
         
         let data = navigationObject.convertToNSData()
         
         
-        let decodedObject = KMBLENavigationObject(data: data)
+        let decodedObject = KMBLENavigationObject(data: data as NSData)
         
         XCTAssertEqual(navigationObject.identifier, decodedObject.identifier)
         XCTAssertEqual(navigationObject.direction, decodedObject.direction)

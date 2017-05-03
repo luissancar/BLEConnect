@@ -113,7 +113,7 @@ class KMBLENavigationObject: NSObject {
     
     override var description: String {
         get {
-            return "identifier: \(self.identifier)\ndirection: \(self.direction)\ndistance: \(self.distance)\nstreetname: \(self.streetname)"
+            return "identifier: \(self.identifier)\ndirection: \(self.direction)\ndistance: \(self.distance)\nstreetname: \(self.streetname ?? "NONE")"
         }
     }
     

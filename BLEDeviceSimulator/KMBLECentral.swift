@@ -209,7 +209,7 @@ extension KMBLECentral : CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
-        DDLogError("error while connecting to peripheral \(error?.localizedDescription)")
+        DDLogError("error while connecting to peripheral \(error?.localizedDescription ?? "NO DESCRIPTION")")
         if let delegate = delegate {
             delegate.central(central: self, didFailConnectToPeripheral: peripheral, error: error as NSError?)
         }
@@ -275,7 +275,7 @@ extension KMBLECentral: CBPeripheralDelegate {
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-        DDLogInfo("peripheral \(peripheral.identifier.uuidString) didUpdateValueForCharacteristic \(characteristic) error: \(error?.localizedDescription)")
+        DDLogInfo("peripheral \(peripheral.identifier.uuidString) didUpdateValueForCharacteristic \(characteristic) error: \(error?.localizedDescription ?? "NO DESCRIPTION")")
         
         if characteristic.uuid.uuidString == navigationServiceNotifyCharacteristicUUID {
             var valueLength = 0
@@ -285,7 +285,7 @@ extension KMBLECentral: CBPeripheralDelegate {
                 DDLogInfo("request data to read")
                 peripheral.readValue(for: characteristic)
             } else {
-                DDLogInfo("got data to display. raw data: \(characteristic.value)")
+                DDLogInfo("got data to display. raw data: \(String(describing: characteristic.value))")
                 if let data = characteristic.value {
                     let dataObject = KMBLENavigationObject(data: data as NSData)
                     DDLogInfo("parsed data \(dataObject)")
