@@ -376,7 +376,7 @@ extension KMBLEConnector: CBPeripheralManagerDelegate {
     }
     
     public func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
-        log("added service \(service.uuid.uuidString) error: \(error?.localizedDescription)", logLevel: .Info)
+        log("added service \(service.uuid.uuidString) error: \(error?.localizedDescription ?? "NO DESCRIPTION")", logLevel: .Info)
         //start advertising of service to enable reconnection
         let result = startAdvertisingNavigationService(false)
         print(result)

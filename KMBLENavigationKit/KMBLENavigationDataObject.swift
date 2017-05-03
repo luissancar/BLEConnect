@@ -17,7 +17,7 @@ import Foundation
     
     open override var description: String {
         get {
-            return "identifier: \(self.identifier)\ndirection: \(direction.rawValue)\n distance:\(distance)\nstreetname: \(streetname)"
+            return "identifier: \(self.identifier)\ndirection: \(direction.rawValue)\n distance:\(distance)\nstreetname: \(streetname ?? "NONE")"
         }
     }
     

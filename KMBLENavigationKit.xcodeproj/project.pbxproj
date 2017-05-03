@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32AE0CACC6BBFB328F8EF15E /* Pods_KomootAppSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0842ED14D4B90538EDE21A1 /* Pods_KomootAppSimulatorTests.framework */; };
 		3918E8CD1D3F9A7A0069DC30 /* KMBLENavigationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918E8CC1D3F9A7A0069DC30 /* KMBLENavigationObject.swift */; };
 		3918E8D51D3FB6C40069DC30 /* BLEDeviceSimulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918E8D41D3FB6C40069DC30 /* BLEDeviceSimulatorTests.swift */; };
 		3918E8DC1D3FB7190069DC30 /* KMBLENavigationDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397D360C1D3E7F760066B5EF /* KMBLENavigationDataObject.swift */; };
@@ -39,10 +38,6 @@
 		39A5649A1D3D31BF007D303D /* KMBLENavigationKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 39A564421D3CE727007D303D /* KMBLENavigationKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		39D174871D4A2C5900E13E02 /* KMBLEEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918E8E11D3FD0230069DC30 /* KMBLEEnums.swift */; };
 		39E2D7501D41090400791960 /* navigationSimulation.csv in Resources */ = {isa = PBXBuildFile; fileRef = 39E2D74F1D41090400791960 /* navigationSimulation.csv */; };
-		48E59C11688E0682D0856F73 /* Pods_KMBLENavigationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757A640C3FF17E14F82C33B9 /* Pods_KMBLENavigationKit.framework */; };
-		8FA06AF4865781891C7A3E44 /* Pods_BLEDeviceSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A2B1FE6DE23202D4879779 /* Pods_BLEDeviceSimulator.framework */; };
-		B1C781536C1150A7B3F9EC18 /* Pods_BLEDeviceSimulatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABCEA8317B06178291D5422E /* Pods_BLEDeviceSimulatorTests.framework */; };
-		CBF3487EE8F0D990869D7BB2 /* Pods_KomootAppSimulator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FD635CD8040EC02D91A0EA /* Pods_KomootAppSimulator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,11 +79,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		00B9A749C6BED2230CBCEB1F /* Pods-KomootAppSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.debug.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.debug.xcconfig"; sourceTree = "<group>"; };
-		07FD635CD8040EC02D91A0EA /* Pods_KomootAppSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootAppSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19FD85B1563E094F67E8BF8B /* Pods-KMBLENavigationKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMBLENavigationKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit.debug.xcconfig"; sourceTree = "<group>"; };
-		1E0B2902547EC122704DFC87 /* Pods-BLEDeviceSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulator.debug.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator.debug.xcconfig"; sourceTree = "<group>"; };
-		24C73D6C7427B728F7D2E10D /* Pods-BLEDeviceSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulator.release.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		2C2FDE8236CC5A3D491447BB /* Pods-KMBLENavigationKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMBLENavigationKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit.release.xcconfig"; sourceTree = "<group>"; };
 		3918E8CC1D3F9A7A0069DC30 /* KMBLENavigationObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMBLENavigationObject.swift; sourceTree = "<group>"; };
 		3918E8D21D3FB6C30069DC30 /* BLEDeviceSimulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEDeviceSimulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,22 +115,13 @@
 		39A564921D3CE77D007D303D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39A564961D3D1410007D303D /* KMBLEConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMBLEConnector.swift; sourceTree = "<group>"; };
 		39E2D74F1D41090400791960 /* navigationSimulation.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = navigationSimulation.csv; sourceTree = "<group>"; };
-		3D1CF4F891DDC47D92D75FC8 /* Pods-KomootAppSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.debug.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		50746E25CCC9DF2C66C3E0CE /* Pods-KomootAppSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.release.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.release.xcconfig"; sourceTree = "<group>"; };
-		5E3A07E8D8C737A63E7C9EA0 /* Pods-KMBLENavigationKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMBLENavigationKit.debug.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit.debug.xcconfig"; sourceTree = "<group>"; };
 		67DBE8B1319169487F9501E5 /* Pods-BLEDeviceSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulatorTests/Pods-BLEDeviceSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		6F81F3C17D58F9A047188A15 /* Pods-BLEDeviceSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulatorTests/Pods-BLEDeviceSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		74B06B30CD3C03221D19299F /* Pods-KomootAppSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.release.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
-		757A640C3FF17E14F82C33B9 /* Pods_KMBLENavigationKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMBLENavigationKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		902C6AD9910FBBE5DD3C6332 /* Pods-KomootAppSimulatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA7EA2B80650A8522F4CD35C /* Pods-BLEDeviceSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator.release.xcconfig"; sourceTree = "<group>"; };
-		ABCEA8317B06178291D5422E /* Pods_BLEDeviceSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEDeviceSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0842ED14D4B90538EDE21A1 /* Pods_KomootAppSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootAppSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8BA350747BC43CD3CC7E80C /* Pods-KomootAppSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		CBA0FD7EC355D342C4F31E2F /* Pods-BLEDeviceSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BLEDeviceSimulator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BLEDeviceSimulator/Pods-BLEDeviceSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		D7340D338200D806D1E3C52B /* Pods-KomootAppSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulatorTests/Pods-KomootAppSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D8A2B1FE6DE23202D4879779 /* Pods_BLEDeviceSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEDeviceSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA5B7EEF130129524CF4C026 /* Pods-KMBLENavigationKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMBLENavigationKit.release.xcconfig"; path = "../komoot-app/Pods/Target Support Files/Pods-KMBLENavigationKit/Pods-KMBLENavigationKit.release.xcconfig"; sourceTree = "<group>"; };
 		F277CBF7C4EEF24DAFA0C515 /* Pods-KomootAppSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KomootAppSimulator.release.xcconfig"; path = "Pods/Target Support Files/Pods-KomootAppSimulator/Pods-KomootAppSimulator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,7 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C781536C1150A7B3F9EC18 /* Pods_BLEDeviceSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +137,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32AE0CACC6BBFB328F8EF15E /* Pods_KomootAppSimulatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +144,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48E59C11688E0682D0856F73 /* Pods_KMBLENavigationKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				39A564981D3D1DA0007D303D /* KMBLENavigationKit.framework in Frameworks */,
-				CBF3487EE8F0D990869D7BB2 /* Pods_KomootAppSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA06AF4865781891C7A3E44 /* Pods_BLEDeviceSimulator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,11 +168,6 @@
 		325AA98DE9A4C9C8FEA92FBE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07FD635CD8040EC02D91A0EA /* Pods_KomootAppSimulator.framework */,
-				757A640C3FF17E14F82C33B9 /* Pods_KMBLENavigationKit.framework */,
-				D8A2B1FE6DE23202D4879779 /* Pods_BLEDeviceSimulator.framework */,
-				B0842ED14D4B90538EDE21A1 /* Pods_KomootAppSimulatorTests.framework */,
-				ABCEA8317B06178291D5422E /* Pods_BLEDeviceSimulatorTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,14 +273,6 @@
 		AE7C4ECB3249579B38651733 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				00B9A749C6BED2230CBCEB1F /* Pods-KomootAppSimulator.debug.xcconfig */,
-				50746E25CCC9DF2C66C3E0CE /* Pods-KomootAppSimulator.release.xcconfig */,
-				5E3A07E8D8C737A63E7C9EA0 /* Pods-KMBLENavigationKit.debug.xcconfig */,
-				DA5B7EEF130129524CF4C026 /* Pods-KMBLENavigationKit.release.xcconfig */,
-				1E0B2902547EC122704DFC87 /* Pods-BLEDeviceSimulator.debug.xcconfig */,
-				24C73D6C7427B728F7D2E10D /* Pods-BLEDeviceSimulator.release.xcconfig */,
-				3D1CF4F891DDC47D92D75FC8 /* Pods-KomootAppSimulatorTests.debug.xcconfig */,
-				74B06B30CD3C03221D19299F /* Pods-KomootAppSimulatorTests.release.xcconfig */,
 				6F81F3C17D58F9A047188A15 /* Pods-BLEDeviceSimulatorTests.debug.xcconfig */,
 				67DBE8B1319169487F9501E5 /* Pods-BLEDeviceSimulatorTests.release.xcconfig */,
 				CBA0FD7EC355D342C4F31E2F /* Pods-BLEDeviceSimulator.debug.xcconfig */,
