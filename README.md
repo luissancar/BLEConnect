@@ -2,7 +2,7 @@
 
 ## BLEConnect
 
-With komoot BLE Connect, you can enable your BLE device to show navigation instructions for cycling, running and outdoor routes. [https://www.komoot.com/b2b/connect](https://www.komoot.com/b2b/connect)
+With komoot BLE Connect, you enable your BLE device to show navigation instructions for cycling, running and outdoor routes delivered by komoot Apps for Android and iOS. [https://www.komoot.com/b2b/connect](https://www.komoot.com/b2b/connect)
 
 All you need to implement this is found here:
 
@@ -18,13 +18,13 @@ All you need to implement this is found here:
 <div style="text-align:center"><img src="assets/BLE-Connect.png" width="673" /></div>
 
 #### Komoot App
-The user activates BLE Connect inside the komoot app settings. When doing so, the app starts advertising the komoot navigation BLE service and tells the user to start pairing via their external BLE device. 
+The user activates BLE Connect inside the komoot app settings. When doing so, the app starts advertising the komoot navigation BLE service and tells the user to start pairing via their external BLE device.
 The komoot app stops advertising once the connection to the characteristic is established.
 
 #### Your device / what you implement
 The external BLE device is responsible to establish the connection and subscribing to the komoot navigation service characteristic. Your device should search for the komoot navigation service (UUID defined below). Otherwise it might be possible that you won’t find the komoot app while the app is in background (not visible).
 
-**Please note**: The advertisement data is different while the app is running in background. For details please check [Apple developer documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html#//apple_ref/doc/uid/TP40013257-CH7-SW1).
+**Please note**: The advertisement data on iOS are different while the app is running in background. For details please check [Apple developer documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html#//apple_ref/doc/uid/TP40013257-CH7-SW1).
 
 
 
@@ -32,10 +32,12 @@ The external BLE device is responsible to establish the connection and subscribi
 <div style="text-align:center"><img src="assets/BLE-SendNavigation.png" width="673" /></div>
 
 #### Komoot App
-The komoot app sends instructions data ~1 per second when a navigation gets started (or resumed) in the komoot app. How data is transferred is described in detail [below](#headerData).
+The komoot app sends instructions data ~1 per second when a navigation gets started (or resumed) in the komoot app. The transferred data format is described in detail [below](#headerData).
 
 #### Your device / what you implement
-The komoot app announces new data by using notifications. Once you receive a notification, you need to start a read request to get the full data object of the last navigation instruction. 
+The komoot app announces new data by changing a BLE characteristic. Once you receive a notification about the change, you start a read request on that characteristic to get the data object of the last navigation instruction.
+
+The komoot app delivers the first 22 Bytes with the first request. You can do subsequent read request with shifted offsets (22) to retrieve more information if the streetname is long. When the komoot app delivers an offset error you know that you got the complete Navigation Instruction.
 
 ### Reconnect and connection status
 
@@ -43,14 +45,14 @@ The komoot app announces new data by using notifications. Once you receive a not
 The komoot app repeats the last navigation instruction every 2 seconds (might be changed in the future). It observes your read requests, and if there hasn’t been a read request for a longer time (5 sec. Might be changed in the future), the app assumes that the connection got lost and will start advertising the service again. Your device configured as a BLE central should then initiate a reconnect.
 
 #### Your device / what you implement
-You have to start the scanning for the navigation service once you detect the connection to the peripheral got lost. After a few seconds, the komoot app will start the advertising.
+You have to start scanning for the navigation service once you detect the connection to the peripheral got lost. After a few seconds, the komoot app will start advertising.
 
 <a name="headerSimulatorApps"></a>
 ## The Simulator Apps
 
-To make development easier for you, we created two simulator apps you can find in this repository. Just clone the repository and open the Xcode Project to start the simulators on your iOS device. 
+To make development easier for you, we created two simulator apps you can find in this repository. Just clone the repository and open the Xcode Project to start the simulators on your iOS device.
 
-**Note:** Set the signing team in the General tab, if you run the simulator apps under Xcode 8 or above.
+**Note:** Set the signing team in the General tab, if you run the simulator apps with Xcode 8 or above.
 
 | KomootAppSimulator | BLEDeviceSimulator |
 |:---:|:---:|
@@ -139,12 +141,11 @@ The street is provided as UTF-8 string. The street is starting at byte 21 until 
 <img src="assets/distance.jpg" width="300" />
 
 
-The distance is provided in meters. There is no rounding done by the komoot app. Your implementation is responsible to round and convert into the right measurement system. 
+The distance is provided in meters. There is no rounding done by the komoot app. Your implementation is responsible to round and convert into the right measurement system.
 
 This is an example how we do rounding in the komoot app:
 
-| Distance Range | Rounding step | Example |
+| Distance Range | Rounding step | Examples |
 |---|---|---|
 |0 - 5|0|Now|
-|6 - *|10|14 -> 10|
-
+|6 - *|10|14 -> 10, 15 -> 20|
