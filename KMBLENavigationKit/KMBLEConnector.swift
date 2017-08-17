@@ -79,7 +79,7 @@ public enum KMBLEConnectionErrorType: Error {
      
      - parameter advertisingIdentifier: The string which will get displayed on the external device while the user will connect to the app.
     */
-    public init(advertisingIdentifier: String) {
+    @objc public init(advertisingIdentifier: String) {
         self.advertisingIdentifier = advertisingIdentifier
         super.init()
     }
