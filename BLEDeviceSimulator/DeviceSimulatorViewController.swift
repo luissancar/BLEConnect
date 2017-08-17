@@ -163,7 +163,7 @@ extension UIColor {
             var cString:String = (hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)).uppercased()
             
             if (cString.hasPrefix("#")) {
-                cString = cString.substring(from: cString.index(cString.startIndex, offsetBy: 1))
+                cString = String(cString[cString.index(cString.startIndex, offsetBy: 1)...])
             }
             
             assert((cString.characters.count) == 6)
