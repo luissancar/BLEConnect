@@ -4,7 +4,7 @@ target 'BLEDeviceSimulator' do
   use_frameworks!
 
   pod 'CocoaLumberjack/Swift', '3.0.0'
-  pod 'LumberjackConsole', '2.4.3'
+  pod 'LumberjackConsole', '3.0.1'  #https://github.com/PTEz/LumberjackConsole
 
   target 'BLEDeviceSimulatorTests' do
     inherit! :search_paths
