@@ -37,7 +37,7 @@ The komoot app sends instructions data about once per second when a navigation g
 #### Your device / what you implement
 The komoot app announces new data by updating a BLE characteristic. Once you receive a notification about the change, you have to start a read request on that characteristic to get the data object of the last navigation instruction.
 
-The komoot app delivers the first 22 Bytes with the first request. You can do subsequent read request with shifted offsets (22) to retrieve more information if the streetname is long. When the komoot app delivers an offset error or a zero-sized byte array you know that you got the complete Navigation Instruction.
+The komoot app delivers up to 22 bytes (iOS) or 20 bytes (Android) with the first response. You can do subsequent read request with shifted offsets (22 iOS, 20 Android) to retrieve more information like the rest of the street name if the street name is too long to fit into the first response. When the komoot app delivers less than 22 bytes (iOS) or 20 bytes (Android), or you get an offset error, or a zero-sized byte array you know that you got the complete Navigation Instruction.
 
 ### Reconnect and connection status
 
