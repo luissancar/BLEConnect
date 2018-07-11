@@ -47,31 +47,31 @@ public enum KMBLEConnectionErrorType: Error {
     case success
 }
 
-@objc open class KMBLEConnector : NSObject {
+@objc public class KMBLEConnector : NSObject {
     
     open weak var delegate : KMBLEConnectorDelegate?
     open var loggingEnabled = false
-    fileprivate static let restoreIdentifier = "KMBLEConnectorRestoreIdentifier"
+    private static let restoreIdentifier = "KMBLEConnectorRestoreIdentifier"
     
-    fileprivate let navigationServiceUUID = "71C1E128-D92F-4FA8-A2B2-0F171DB3436C"
-    fileprivate let navigationServiceCharacteristicUUID = "503DD605-9BCB-4F6E-B235-270A57483026"
+    private let navigationServiceUUID = "71C1E128-D92F-4FA8-A2B2-0F171DB3436C"
+    private let navigationServiceCharacteristicUUID = "503DD605-9BCB-4F6E-B235-270A57483026"
     
-    fileprivate var advertisingIdentifier : String
-    fileprivate var peripheralManager : CBPeripheralManager?
-    fileprivate var navigationCharacteristic : CBMutableCharacteristic?
+    private var advertisingIdentifier : String
+    private var peripheralManager : CBPeripheralManager?
+    private var navigationCharacteristic : CBMutableCharacteristic?
     
-    fileprivate var subscribedCentrals = [CBCentral]()
+    private var subscribedCentrals = [CBCentral]()
     
-    fileprivate var navigationService : CBMutableService?
+    private var navigationService : CBMutableService?
     
-    fileprivate var lastDataObjects  = [KMBLENavigationDataObject]()
-    fileprivate var startTimer : Timer?
-    fileprivate let startTimerMaxTime = 120.0
-    fileprivate var connectionLostTimer : Timer?
+    private var lastDataObjects  = [KMBLENavigationDataObject]()
+    private var startTimer : Timer?
+    private let startTimerMaxTime = 120.0
+    private var connectionLostTimer : Timer?
     
-    fileprivate let cacheNavigationObjectsCount = 10
+    private let cacheNavigationObjectsCount = 10
     
-    fileprivate let communicationQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.default)
+    private let communicationQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.default)
     
     
     /**
@@ -89,7 +89,7 @@ public enum KMBLEConnectionErrorType: Error {
      
      Then you call this method a popup could appear to ask for the background permission "**bluetooth-peripheral**"
      */
-    open func setUpService() {
+    public func setUpService() {
         var startOptions = [String: Any]()
         startOptions[CBPeripheralManagerRestoredStateServicesKey] = KMBLEConnector.peripheralManagerRestoreKey()
         peripheralManager = CBPeripheralManager(delegate: self, queue: communicationQueue, options: startOptions)
@@ -104,7 +104,7 @@ public enum KMBLEConnectionErrorType: Error {
     /** 
      Call this to shutdown the bluetooth system. It will also close the connection to the central.
     */
-    open func stopService() {
+    public func stopService() {
         peripheralManager = nil
         startTimer?.invalidate()
         startTimer = nil
@@ -120,7 +120,7 @@ public enum KMBLEConnectionErrorType: Error {
         
         - returns: Returns a Bool to indicate that the connection was restored.
      */
-    open func didFinishLaunchingWithOptions(_ options: [UIApplicationLaunchOptionsKey: Any]?) -> Bool{
+    public func didFinishLaunchingWithOptions(_ options: [UIApplicationLaunchOptionsKey: Any]?) -> Bool{
         if let options = options {
             if let peripheralManagerIdentifiers = options[UIApplicationLaunchOptionsKey.bluetoothPeripherals] as? [String] {
                 for identifier in peripheralManagerIdentifiers {
@@ -143,7 +143,7 @@ public enum KMBLEConnectionErrorType: Error {
      - returns: An error type to indicate that the advertising was started or an error happened. See KMBLEConnectionErrorType
      
     */
-    open func startAdvertisingNavigationService(_ shouldStartTimer: Bool) -> KMBLEConnectionErrorType {
+    public func startAdvertisingNavigationService(_ shouldStartTimer: Bool) -> KMBLEConnectionErrorType {
         if let peripheralManager = peripheralManager {
             if peripheralManager.state == .poweredOn {
                 if peripheralManager.isAdvertising {
@@ -189,7 +189,7 @@ public enum KMBLEConnectionErrorType: Error {
     /**
      Stops the bluetooth advertising of the komoot navigation service. This will automatically happen when a central subscripted to the service characteristic.
     */
-    open func stopAdvertisingNavigationService() {
+    public func stopAdvertisingNavigationService() {
         if let peripheralManager = peripheralManager {
             if peripheralManager.isAdvertising {
                 peripheralManager.stopAdvertising()
@@ -206,7 +206,7 @@ public enum KMBLEConnectionErrorType: Error {
      
      - seealso: [BLEConnect Documentation](https://github.com/komoot/BLEConnect)
      */
-    open func sendNavigationDataObject(_ dataObject: KMBLENavigationDataObject) -> KMBLEConnectionErrorType {
+    public func sendNavigationDataObject(_ dataObject: KMBLENavigationDataObject) -> KMBLEConnectionErrorType {
         if let peripheralManager = peripheralManager {
             if (peripheralManager.state == .poweredOn) {
                 if (connectionLostTimer == nil) {
@@ -245,12 +245,12 @@ public enum KMBLEConnectionErrorType: Error {
     
     //MARK: private methods
     
-    fileprivate func dataObjectForIdentifier(_ identifier: UInt32) -> Data {
+    private func dataObjectForIdentifier(_ identifier: UInt32) -> Data {
         var dataIdentifier = identifier
         return Data(bytes: &dataIdentifier, count: MemoryLayout<UInt32>.size)
     }
     
-    fileprivate func configureLogging() {
+    private func configureLogging() {
         #if DEBUG
            // DDLog.addLogger(DDTTYLogger.sharedInstance()) // TTY = Xcode console
            // DDLog.addLogger(DDASLLogger.sharedInstance()) // ASL = Apple System Logs
@@ -260,7 +260,7 @@ public enum KMBLEConnectionErrorType: Error {
     /**
      logging method will forward to cocoa lumberjack if DEBUG is active otherwise it's sending a notification.
      */
-    fileprivate func log(_ message: String, logLevel: KMBLEConnectorLogLevel) {
+    private func log(_ message: String, logLevel: KMBLEConnectorLogLevel) {
         if loggingEnabled == false {
             return
         }
@@ -283,7 +283,7 @@ public enum KMBLEConnectionErrorType: Error {
         }
     }
     
-    fileprivate func buildService() -> CBMutableService {
+    private func buildService() -> CBMutableService {
         let serviceUUID = CBUUID(string: navigationServiceUUID)
         let serviceNavigationCharacteristicUUID = CBUUID(string: navigationServiceCharacteristicUUID)
         let navigationCharacteristic = CBMutableCharacteristic(type: serviceNavigationCharacteristicUUID,
@@ -298,7 +298,7 @@ public enum KMBLEConnectionErrorType: Error {
         return service
     }
     
-    fileprivate func restoreConnections(_ services: [CBMutableService]) {
+    private func restoreConnections(_ services: [CBMutableService]) {
         for service in services {
             //check if it is the right service
             if service.uuid == CBUUID(string: navigationServiceUUID) {
@@ -315,7 +315,7 @@ public enum KMBLEConnectionErrorType: Error {
         }
     }
     
-    @objc fileprivate func advertisingTimerFired(_ timer: Timer) {
+    @objc private func advertisingTimerFired(_ timer: Timer) {
         if timer.isValid {
             stopAdvertisingNavigationService()
         }
@@ -324,7 +324,7 @@ public enum KMBLEConnectionErrorType: Error {
         delegate?.bleConnectorConnectionToCentralTimedOut?(self)
     }
     
-    @objc fileprivate func handleConnectionLostTimerFired(_ timer: Timer) {
+    @objc private func handleConnectionLostTimerFired(_ timer: Timer) {
         if timer.isValid {
             let errorType = startAdvertisingNavigationService(false)
             //try until bluetooth system is running again
@@ -334,12 +334,12 @@ public enum KMBLEConnectionErrorType: Error {
         }
     }
     
-    fileprivate func restartConnectionLostTimer() {
+    private func restartConnectionLostTimer() {
         cancelConnectionLostTimer()
         connectionLostTimer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(handleConnectionLostTimerFired(_:)), userInfo: nil, repeats: false)
     }
     
-    fileprivate func cancelConnectionLostTimer() {
+    private func cancelConnectionLostTimer() {
         if let connectionLostTimer = connectionLostTimer {
             connectionLostTimer.invalidate()
         }

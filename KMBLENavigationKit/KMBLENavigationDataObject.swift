@@ -8,20 +8,20 @@
 
 import Foundation
 
-@objc open class KMBLENavigationDataObject: NSObject {
+@objc public class KMBLENavigationDataObject: NSObject {
     
-    fileprivate(set) var identifier : UInt32
-    fileprivate(set) var direction : NavigationDirection
-    fileprivate(set) var distance : UInt32
-    fileprivate(set) var streetname : String?
+    private(set) var identifier : UInt32
+    private(set) var direction : NavigationDirection
+    private(set) var distance : UInt32
+    private(set) var streetname : String?
     
-    open override var description: String {
+    public override var description: String {
         get {
             return "identifier: \(self.identifier)\ndirection: \(direction.rawValue)\n distance:\(distance)\nstreetname: \(streetname ?? "NONE")"
         }
     }
     
-    override fileprivate init() {
+    override private init() {
         self.identifier = arc4random()
         self.direction = NavigationDirection.unknown
         self.distance = 0
@@ -41,7 +41,7 @@ import Foundation
     /**
      Produces a NSData object from the navigation object. For details please check [BLEConnect Documentation](https://github.com/komoot/BLEConnect)
     */
-    func convertToNSData() -> Data {
+    public func convertToNSData() -> Data {
         let data = NSMutableData()
         data.append(&identifier, length: MemoryLayout<UInt32>.size)
         data.append(&direction, length: MemoryLayout<UInt8>.size)
