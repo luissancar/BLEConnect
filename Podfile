@@ -3,8 +3,8 @@ platform :ios, '9.0'
 target 'BLEDeviceSimulator' do
   use_frameworks!
 
-  pod 'CocoaLumberjack/Swift', '3.0.0'
-  pod 'LumberjackConsole', '3.0.1'  #https://github.com/PTEz/LumberjackConsole
+  pod 'CocoaLumberjack/Swift', '3.4.2'
+  pod 'LumberjackConsole', '3.3.0'  #https://github.com/PTEz/LumberjackConsole
 
   target 'BLEDeviceSimulatorTests' do
     inherit! :search_paths
@@ -14,7 +14,7 @@ end
 target 'KomootAppSimulator' do
   use_frameworks!
 
-  pod 'CocoaLumberjack/Swift', '3.0.0'
+  pod 'CocoaLumberjack/Swift', '3.4.2'
 
   target 'KomootAppSimulatorTests' do
     inherit! :search_paths

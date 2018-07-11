@@ -128,7 +128,6 @@ class KMBLENavigationSimulator: NSObject {
         do {
             fileDataString = try String(contentsOf: fileURL, encoding: String.Encoding.utf8)
         } catch let err as NSError {
-            DDLog.sharedInstance()
             DDLogError("error while reading file from url \(fileURL). Error: \(err.localizedDescription)")
             return
         }
