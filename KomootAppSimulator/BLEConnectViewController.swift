@@ -93,7 +93,7 @@ class BLEConnectViewController: UIViewController {
             }
             simulating = false
             navigationSimulator?.stop()
-            startSimulationButton.setTitle("Start simulation", for: UIControlState())
+            startSimulationButton.setTitle("Start simulation", for: UIControl.State())
             
         } else {
             if (UIApplication.shared.isIdleTimerDisabled == false) {
@@ -101,7 +101,7 @@ class BLEConnectViewController: UIViewController {
             }
             simulating = true
             navigationSimulator?.start()
-            startSimulationButton.setTitle("Stop simulation", for: UIControlState())
+            startSimulationButton.setTitle("Stop simulation", for: UIControl.State())
         }
         
         updateSimulationButton()
@@ -123,16 +123,16 @@ class BLEConnectViewController: UIViewController {
     fileprivate func updateButtonsBySwitchState() {
         if bluetoothActiveSwitch.isOn {
             for button in [startSimulationButton, sendEventButton] {
-                button?.setTitleColor(UIColor.white, for: UIControlState())
-                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControlState())
-                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControlState.highlighted)
+                button?.setTitleColor(UIColor.white, for: UIControl.State())
+                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControl.State())
+                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControl.State.highlighted)
                 
                 button?.isEnabled = true
             }
         } else {
             for button in [startSimulationButton, sendEventButton] {
-                button?.setTitleColor(UIColor(hex: "#8A8A8A"), for: UIControlState.disabled)
-                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControlState.disabled)
+                button?.setTitleColor(UIColor(hex: "#8A8A8A"), for: UIControl.State.disabled)
+                button?.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControl.State.disabled)
                 button?.isEnabled = false
             }
         }
@@ -140,13 +140,13 @@ class BLEConnectViewController: UIViewController {
     
     fileprivate func updateSimulationButton() {
         if simulating {
-            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControlState())
-            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#D2D2D2")!), for: UIControlState.highlighted)
-            startSimulationButton.setTitleColor(UIColor.black, for: UIControlState())
+            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControl.State())
+            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#D2D2D2")!), for: UIControl.State.highlighted)
+            startSimulationButton.setTitleColor(UIColor.black, for: UIControl.State())
         } else {
-            startSimulationButton.setTitleColor(UIColor.white, for: UIControlState())
-            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControlState())
-            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControlState.highlighted)
+            startSimulationButton.setTitleColor(UIColor.white, for: UIControl.State())
+            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControl.State())
+            startSimulationButton.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControl.State.highlighted)
         }
     }
 }
@@ -171,10 +171,10 @@ extension UIColor {
         var cString:String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         
         if (cString.hasPrefix("#")) {
-            cString = String(cString[cString.characters.index(cString.startIndex, offsetBy: 1)...])
+            cString = String(cString[cString.index(cString.startIndex, offsetBy: 1)...])
         }
         
-        assert((cString.characters.count) == 6)
+        assert((cString.count) == 6)
         
         var rgbValue:UInt32 = 0
         Scanner(string: cString).scanHexInt32(&rgbValue)

@@ -41,13 +41,13 @@ class KMBLENavigationSimulatorTests: XCTestCase {
         XCTAssertNotNil(simulator.instructions)
         XCTAssertEqual(simulator.instructions!.count, 89)
         let instruction = simulator.instructions![30]
-        XCTAssertEqual(NavigationDirection.RoundaboutCCW13.rawValue, instruction.direction.rawValue)
+        XCTAssertEqual(NavigationDirection.roundaboutCCW13.rawValue, instruction.direction.rawValue)
     }
     
     func testShortenString() {
         let originalString = "\"Kiepenheuerallee\""
         
-        let shortenString = originalString.substring(with: Range<String.Index>(originalString.characters.index(originalString.startIndex, offsetBy: 1)..<originalString.characters.index(originalString.endIndex, offsetBy: -1)))
+        let shortenString = originalString[originalString.index(originalString.startIndex, offsetBy: 1)..<originalString.index(originalString.endIndex, offsetBy: -1)]
         XCTAssertEqual("Kiepenheuerallee", shortenString)
     }
 

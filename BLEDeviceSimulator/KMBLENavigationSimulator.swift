@@ -91,8 +91,7 @@ class KMBLENavigationSimulator: NSObject {
                     var streetname = instruction.title
                     if let originalStreetname = streetname {
                         if originalStreetname.hasSuffix("\"") == true && originalStreetname.hasPrefix("\"") == true {
-                            let range = Range<String.Index>(originalStreetname.characters.index(originalStreetname.startIndex, offsetBy: 1)..<originalStreetname.characters.index(originalStreetname.endIndex, offsetBy: -1))
-                            streetname = String(originalStreetname[range])
+                            streetname = String(originalStreetname[originalStreetname.index(originalStreetname.startIndex, offsetBy: 1)..<originalStreetname.index(originalStreetname.endIndex, offsetBy: -1)])
                         }
                     }
                     

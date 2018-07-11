@@ -120,9 +120,9 @@ public enum KMBLEConnectionErrorType: Error {
         
         - returns: Returns a Bool to indicate that the connection was restored.
      */
-    public func didFinishLaunchingWithOptions(_ options: [UIApplicationLaunchOptionsKey: Any]?) -> Bool{
+    public func didFinishLaunchingWithOptions(_ options: [UIApplication.LaunchOptionsKey: Any]?) -> Bool{
         if let options = options {
-            if let peripheralManagerIdentifiers = options[UIApplicationLaunchOptionsKey.bluetoothPeripherals] as? [String] {
+            if let peripheralManagerIdentifiers = options[UIApplication.LaunchOptionsKey.bluetoothPeripherals] as? [String] {
                 for identifier in peripheralManagerIdentifiers {
                     if identifier == KMBLEConnector.peripheralManagerRestoreKey() {
                         setUpService()

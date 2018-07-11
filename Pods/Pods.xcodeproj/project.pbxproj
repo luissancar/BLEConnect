@@ -144,20 +144,20 @@
 		03510E88EA96ADD427956AB92977086D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0697B603D9E83C64D715DDAAA31C35E8 /* CocoaLumberjack.default-Core-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "CocoaLumberjack.default-Core-Swift.xcconfig"; path = "../CocoaLumberjack.default-Core-Swift/CocoaLumberjack.default-Core-Swift.xcconfig"; sourceTree = "<group>"; };
 		08CA8EAB71328D2EBE8B96A36CFDC45E /* Pods-KomootAppSimulatorTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KomootAppSimulatorTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0B673B871F54FCA3A11A9BC591D43018 /* Pods-BLEDeviceSimulatorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BLEDeviceSimulatorTests.modulemap"; sourceTree = "<group>"; };
+		0B673B871F54FCA3A11A9BC591D43018 /* Pods-BLEDeviceSimulatorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BLEDeviceSimulatorTests.modulemap"; sourceTree = "<group>"; };
 		0BA75924D4BF1053A26C8AAF6849C775 /* LumberjackConsole.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LumberjackConsole.xcconfig; sourceTree = "<group>"; };
 		1021EDA67FE5BF0C9B10E32BF35E539C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105CCC7C493356BDAEB06F947AAFA0C0 /* DDASLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Classes/DDASLLogger.h; sourceTree = "<group>"; };
 		11AD7AE0CEF4A600402965103F7B74DC /* NBUCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NBUCore-dummy.m"; sourceTree = "<group>"; };
 		14D4C5D2F2EB245574B3C649F6521FC9 /* Pods-KomootAppSimulator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KomootAppSimulator-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1949E3B3EA1069683813EAECB3E713EB /* Pods-BLEDeviceSimulator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BLEDeviceSimulator.modulemap"; sourceTree = "<group>"; };
-		1B28401488C79DF6AE087B4FC752C346 /* NBUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NBUCore.framework; path = NBUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B2BA416D2370FE6F0B0AA3EA1366CB4 /* CocoaLumberjack.default-Core-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; name = "CocoaLumberjack.default-Core-Swift.modulemap"; path = "../CocoaLumberjack.default-Core-Swift/CocoaLumberjack.default-Core-Swift.modulemap"; sourceTree = "<group>"; };
+		1949E3B3EA1069683813EAECB3E713EB /* Pods-BLEDeviceSimulator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-BLEDeviceSimulator.modulemap"; sourceTree = "<group>"; };
+		1B28401488C79DF6AE087B4FC752C346 /* NBUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NBUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B2BA416D2370FE6F0B0AA3EA1366CB4 /* CocoaLumberjack.default-Core-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; name = "CocoaLumberjack.default-Core-Swift.modulemap"; path = "../CocoaLumberjack.default-Core-Swift/CocoaLumberjack.default-Core-Swift.modulemap"; sourceTree = "<group>"; };
 		1D54D039D62A9991567B19B39D495E5B /* Pods-BLEDeviceSimulatorTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BLEDeviceSimulatorTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1D94D7F392C77CE3F480741C69CDD49A /* LumberjackConsole.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = LumberjackConsole.storyboard; path = Source/LumberjackConsole.storyboard; sourceTree = "<group>"; };
 		1F8F6BA57131230ED796D6A819742C3D /* PTEAdjustLevelsTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTEAdjustLevelsTableView.m; path = Source/PTEAdjustLevelsTableView.m; sourceTree = "<group>"; };
 		2219EA484A420BD628B1FFF70827A57F /* DDASLLogCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogCapture.m; path = Classes/DDASLLogCapture.m; sourceTree = "<group>"; };
-		2374E046B63B038C00CE5AD4D16C866A /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaLumberjack.framework; path = "CocoaLumberjack.default-Core-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2374E046B63B038C00CE5AD4D16C866A /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F82AB660CC0F6EDBB983FF0E7E4892 /* NBUAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NBUAvailability.h; path = Source/NBUAvailability.h; sourceTree = "<group>"; };
 		24621D2EB9F251C276AD198BB8E1C6E4 /* Pods-BLEDeviceSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BLEDeviceSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		25150BEFDBE1C2A3B3C4124B6DA6FC0F /* CocoaLumberjack.default-Core-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaLumberjack.default-Core-Swift-prefix.pch"; path = "../CocoaLumberjack.default-Core-Swift/CocoaLumberjack.default-Core-Swift-prefix.pch"; sourceTree = "<group>"; };
@@ -167,16 +167,16 @@
 		363651AF9F7904CA1DDC4E8184D7C311 /* NBUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NBUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		369CE272B5F2312591583107D5775CD6 /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDContextFilterLogFormatter.h; path = Classes/Extensions/DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
 		39438F954F671564651DF188DF3A53CD /* CocoaLumberjack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CocoaLumberjack.h; path = Classes/CocoaLumberjack.h; sourceTree = "<group>"; };
-		3C943EBE87A824EF6D9CA936006A5DC8 /* LumberjackConsole.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LumberjackConsole.framework; path = LumberjackConsole.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C943EBE87A824EF6D9CA936006A5DC8 /* LumberjackConsole.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LumberjackConsole.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB962EF8BF53130B92AEBE9F4779121 /* Pods-KomootAppSimulatorTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KomootAppSimulatorTests-resources.sh"; sourceTree = "<group>"; };
 		3D302750597D9C5DBDAB03DAB1B868C1 /* CocoaLumberjack.default-Core-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CocoaLumberjack.default-Core-Swift-umbrella.h"; path = "../CocoaLumberjack.default-Core-Swift/CocoaLumberjack.default-Core-Swift-umbrella.h"; sourceTree = "<group>"; };
 		40DEA9759C718A66ABB3EAF8DFBE10F4 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDDispatchQueueLogFormatter.m; path = Classes/Extensions/DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		416EB7513ADF7F5595637315EFEEBFA6 /* CocoaLumberjack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CocoaLumberjack.swift; path = Classes/CocoaLumberjack.swift; sourceTree = "<group>"; };
 		4B13B82DDFEB9CF2B79E1B0BEA107DC6 /* DDTTYLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Classes/DDTTYLogger.m; sourceTree = "<group>"; };
-		4D31227F1340ED98601897BF81D1CD6A /* Pods_KomootAppSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KomootAppSimulatorTests.framework; path = "Pods-KomootAppSimulatorTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D31227F1340ED98601897BF81D1CD6A /* Pods_KomootAppSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootAppSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCFA8DF2306AF37E6E626AC377FC11F /* DDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Classes/DDLog.m; sourceTree = "<group>"; };
 		4EBE065288CB910784493DE1E198BF74 /* CocoaLumberjack-Core-Default-Extensions-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaLumberjack-Core-Default-Extensions-Swift-dummy.m"; sourceTree = "<group>"; };
-		50C37254C6BAFE8FF22E68EB2DEFD775 /* Pods_BLEDeviceSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BLEDeviceSimulator.framework; path = "Pods-BLEDeviceSimulator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C37254C6BAFE8FF22E68EB2DEFD775 /* Pods_BLEDeviceSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEDeviceSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51759C1C2315CB574D0B306FB44C2C19 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		532A0098224308783CA4F1C4638C3EC3 /* NBUCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NBUCore.xcconfig; sourceTree = "<group>"; };
 		56622007820DAB667E0D6060044F8148 /* Pods-KomootAppSimulatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KomootAppSimulatorTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,18 +199,18 @@
 		80008009D4F66195FDC712310B651469 /* CocoaLumberjack-Core-Default-Extensions-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaLumberjack-Core-Default-Extensions-Swift-prefix.pch"; sourceTree = "<group>"; };
 		86B22F4697837BC907B65AD5C3F107AC /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAbstractDatabaseLogger.h; path = Classes/DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		87640603D2436025EC1C9CF37868851B /* DDMultiFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDMultiFormatter.h; path = Classes/Extensions/DDMultiFormatter.h; sourceTree = "<group>"; };
-		8F4FFAF6785B3CBBB5620DCD566F4633 /* Pods-KomootAppSimulatorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KomootAppSimulatorTests.modulemap"; sourceTree = "<group>"; };
+		8F4FFAF6785B3CBBB5620DCD566F4633 /* Pods-KomootAppSimulatorTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KomootAppSimulatorTests.modulemap"; sourceTree = "<group>"; };
 		90AB17D7807625C6D1F404E600C9DB52 /* DDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = Classes/DDLog.h; sourceTree = "<group>"; };
 		9189031700971E229D6CA179A239043D /* DDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Classes/DDTTYLogger.h; sourceTree = "<group>"; };
 		91ABDE0D017D6554FF945B33EAA6AC84 /* NBUCore-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NBUCore-prefix.pch"; sourceTree = "<group>"; };
 		91F2F948B8E55957BD436E72F1214C21 /* Pods-KomootAppSimulatorTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KomootAppSimulatorTests-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96CD7DD8B377D2E53498B0888EB1B0F1 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaLumberjack.framework; path = "CocoaLumberjack-Core-Default-Extensions-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96CD7DD8B377D2E53498B0888EB1B0F1 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0A09754D50E6927C585B9EC8A2D8C5 /* PTEConsoleLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTEConsoleLogger.h; path = Source/PTEConsoleLogger.h; sourceTree = "<group>"; };
 		9B3FD498D7D175A3FA7068A1FC971001 /* DDASLLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Classes/DDASLLogger.m; sourceTree = "<group>"; };
 		9C42313ACCC92A1B17FF95053FB42108 /* PTEDashboard.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTEDashboard.m; path = Source/PTEDashboard.m; sourceTree = "<group>"; };
 		9F036A7D5E8370DAF0D39AF392D16BB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A357AC5EE6E9D4047096B8227507188B /* Pods_BLEDeviceSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BLEDeviceSimulatorTests.framework; path = "Pods-BLEDeviceSimulatorTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A357AC5EE6E9D4047096B8227507188B /* Pods_BLEDeviceSimulatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BLEDeviceSimulatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A49D90734AE3545D8AF1420A460E81E3 /* DDLogMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLogMacros.h; path = Classes/DDLogMacros.h; sourceTree = "<group>"; };
 		A57887C76E3198879669D2158D891A87 /* Pods-KomootAppSimulatorTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KomootAppSimulatorTests-dummy.m"; sourceTree = "<group>"; };
 		A57AA4326D3D593DD56FF1946D069975 /* Pods-BLEDeviceSimulator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BLEDeviceSimulator-dummy.m"; sourceTree = "<group>"; };
@@ -219,13 +219,13 @@
 		ABF8FF93A600C89FA49D1877627967B7 /* Pods-BLEDeviceSimulator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BLEDeviceSimulator.debug.xcconfig"; sourceTree = "<group>"; };
 		AC4E5DFC931861A21D729695C289E374 /* CocoaLumberjack-Core-Default-Extensions-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CocoaLumberjack-Core-Default-Extensions-Swift.xcconfig"; sourceTree = "<group>"; };
 		ADA2FEC681D23165E04CC9EAF576AECB /* DDAssertMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAssertMacros.h; path = Classes/DDAssertMacros.h; sourceTree = "<group>"; };
-		AE16FC094F5A694D859D6D91A80FAFA5 /* NBUCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = NBUCore.modulemap; sourceTree = "<group>"; };
+		AE16FC094F5A694D859D6D91A80FAFA5 /* NBUCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NBUCore.modulemap; sourceTree = "<group>"; };
 		AEEB95186DA8D914B55A4B6020B87215 /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDContextFilterLogFormatter.m; path = Classes/Extensions/DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
 		AF55B3EEBC78DF1C9BC4AE5FB4E3EE07 /* Pods-BLEDeviceSimulator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BLEDeviceSimulator-frameworks.sh"; sourceTree = "<group>"; };
 		B0148142AC2E2AE02B35531A3464C4D2 /* Pods-BLEDeviceSimulatorTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BLEDeviceSimulatorTests-resources.sh"; sourceTree = "<group>"; };
 		B17F9155C8A930522F66EE019727A673 /* Pods-BLEDeviceSimulator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BLEDeviceSimulator.release.xcconfig"; sourceTree = "<group>"; };
 		B3245310A9A851990E131C35C2FFF170 /* PTEDashboard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PTEDashboard.h; path = Source/PTEDashboard.h; sourceTree = "<group>"; };
-		B4C621EF135720E73954B869F2CB01C7 /* LumberjackConsole.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LumberjackConsole.modulemap; sourceTree = "<group>"; };
+		B4C621EF135720E73954B869F2CB01C7 /* LumberjackConsole.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LumberjackConsole.modulemap; sourceTree = "<group>"; };
 		BC7296848B0E7E1AD9076E5A398627AC /* DDMultiFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDMultiFormatter.m; path = Classes/Extensions/DDMultiFormatter.m; sourceTree = "<group>"; };
 		BD3872228FCA38DB764229BE32F14402 /* Pods-BLEDeviceSimulator-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BLEDeviceSimulator-resources.sh"; sourceTree = "<group>"; };
 		BD7A4A5A1A4EA97BC1DEA3D13C56D2BE /* Pods-BLEDeviceSimulatorTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BLEDeviceSimulatorTests-umbrella.h"; sourceTree = "<group>"; };
@@ -233,16 +233,16 @@
 		BEB1D1702CE65892FC254582F6034F12 /* Pods-BLEDeviceSimulatorTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BLEDeviceSimulatorTests-frameworks.sh"; sourceTree = "<group>"; };
 		BF6474600AA5A4E88D32D5ACE497C3C2 /* Pods-KomootAppSimulator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KomootAppSimulator-acknowledgements.plist"; sourceTree = "<group>"; };
 		C313BC1EC969A741B9391DBBD021F177 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C46826E9AB41460668A1A40707406E03 /* Pods_KomootAppSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KomootAppSimulator.framework; path = "Pods-KomootAppSimulator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C46826E9AB41460668A1A40707406E03 /* Pods_KomootAppSimulator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KomootAppSimulator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48FC4653C80E08579CFC79DFF13C32A /* DDASLLogCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogCapture.h; path = Classes/DDASLLogCapture.h; sourceTree = "<group>"; };
 		C4F5DD010B95E6C649BA6458C9A65468 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../CocoaLumberjack.default-Core-Swift/Info.plist"; sourceTree = "<group>"; };
 		C783B6A63C7054ED838E94F1BA3F326D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C913C9E804D256BEF7337F2E4E13CF1D /* CocoaLumberjack.default-Core-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CocoaLumberjack.default-Core-Swift-dummy.m"; path = "../CocoaLumberjack.default-Core-Swift/CocoaLumberjack.default-Core-Swift-dummy.m"; sourceTree = "<group>"; };
 		CB1820501EEB7E096B61D52AC6F2BE5E /* Pods-KomootAppSimulatorTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KomootAppSimulatorTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CB253772AE163885D43DD2A43E914D8C /* Pods-KomootAppSimulator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KomootAppSimulator-umbrella.h"; sourceTree = "<group>"; };
-		CF75AE0ED8327624D8EDCBA5AA720297 /* Pods-KomootAppSimulator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-KomootAppSimulator.modulemap"; sourceTree = "<group>"; };
+		CF75AE0ED8327624D8EDCBA5AA720297 /* Pods-KomootAppSimulator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KomootAppSimulator.modulemap"; sourceTree = "<group>"; };
 		D28732E7CAE5D25A35C4E937F5E76E5C /* PTEConsoleTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PTEConsoleTableView.m; path = Source/PTEConsoleTableView.m; sourceTree = "<group>"; };
-		D552CAEDA0C1784DD10C6E6398C4FF7F /* CocoaLumberjack-Core-Default-Extensions-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "CocoaLumberjack-Core-Default-Extensions-Swift.modulemap"; sourceTree = "<group>"; };
+		D552CAEDA0C1784DD10C6E6398C4FF7F /* CocoaLumberjack-Core-Default-Extensions-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "CocoaLumberjack-Core-Default-Extensions-Swift.modulemap"; sourceTree = "<group>"; };
 		D7140F92880AF709127F1F0DBEF5A47C /* Pods-BLEDeviceSimulatorTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BLEDeviceSimulatorTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D865D31A27ABE7F09F4D754893683C4E /* LumberjackConsole-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LumberjackConsole-dummy.m"; sourceTree = "<group>"; };
 		E56CA8AE6EB82241C16543CB53C384A9 /* NBUCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NBUCore-umbrella.h"; sourceTree = "<group>"; };
@@ -334,7 +334,6 @@
 				C967527F5B3483B199735434C65CFFE4 /* Support Files */,
 				DC50306749EC079C8A264CEC9D4973FE /* Swift */,
 			);
-			name = CocoaLumberjack;
 			path = CocoaLumberjack;
 			sourceTree = "<group>";
 		};
@@ -424,7 +423,6 @@
 				D63B7F712C632B8C85982453F6DF037E /* Resources */,
 				9138ACDAE4FB524299B582177059EF2E /* Support Files */,
 			);
-			name = LumberjackConsole;
 			path = LumberjackConsole;
 			sourceTree = "<group>";
 		};
@@ -514,7 +512,6 @@
 				342ACE7EB1DAF969BFB01FC65EC11C3E /* NBUCore.m */,
 				8026BECEAC33E9106BA831FD4C3725F8 /* Support Files */,
 			);
-			name = NBUCore;
 			path = NBUCore;
 			sourceTree = "<group>";
 		};
@@ -868,6 +865,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					5126836CF7DD13262D763F652012A4B7 = {
+						LastSwiftMigration = 1000;
+					};
+					7D5DE232E1C31F7B45C3B12C46A08943 = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
