@@ -80,15 +80,15 @@ class DeviceSimulatorViewController: UIViewController {
     
     fileprivate func updateButtonStates() {
             if connectedPeripherals.count > 0 {
-                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControlState.normal)
-                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#D2D2D2")!), for: UIControlState.highlighted)
-                connectButton.setTitle("Disconnect", for: UIControlState.normal)
-                connectButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#F1F1F1")!), for: UIControl.State.normal)
+                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#D2D2D2")!), for: UIControl.State.highlighted)
+                connectButton.setTitle("Disconnect", for: UIControl.State.normal)
+                connectButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
             } else {
-                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControlState.normal)
-                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControlState.highlighted)
-                connectButton.setTitle("Start Connection", for: UIControlState.normal)
-                connectButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#78B62E")!), for: UIControl.State.normal)
+                connectButton.setBackgroundImage(UIImage(color: UIColor(hex: "#5E9422")!), for: UIControl.State.highlighted)
+                connectButton.setTitle("Start Connection", for: UIControl.State.normal)
+                connectButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
             }
         
     }
@@ -133,7 +133,7 @@ extension DeviceSimulatorViewController: KMBLEDataDelegate {
         let unitString = "m"
 
         navigationDistanceLabel.text = "\(dataObject.distance) \(unitString)"
-        navigationImageView.image = dataObject.navigationImage()?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        navigationImageView.image = dataObject.navigationImage()?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
     }
 }
 
@@ -166,7 +166,7 @@ extension UIColor {
                 cString = String(cString[cString.index(cString.startIndex, offsetBy: 1)...])
             }
             
-            assert((cString.characters.count) == 6)
+            assert((cString.count) == 6)
         
             var rgbValue:UInt32 = 0
             Scanner(string: cString).scanHexInt32(&rgbValue)

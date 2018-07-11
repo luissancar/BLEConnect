@@ -14,10 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var central : KMBLECentral?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if let centralManagerIdentifiers = launchOptions?[UIApplicationLaunchOptionsKey.bluetoothCentrals] as? [String] {
+        if let centralManagerIdentifiers = launchOptions?[UIApplication.LaunchOptionsKey.bluetoothCentrals] as? [String] {
             for identifier in centralManagerIdentifiers {
                 if identifier == KMBLECentral.navigationServiceUUIDString() {
                     central = KMBLECentral()

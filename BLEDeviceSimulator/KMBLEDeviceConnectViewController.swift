@@ -117,9 +117,9 @@ extension KMBLEDeviceConnectViewController : KMBLECentralDelegate {
     }
     
     func central(central: KMBLECentral, didFailConnectToPeripheral: CBPeripheral, error: NSError?) {
-        let alert = UIAlertController(title: "Connection error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Connection error", message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
