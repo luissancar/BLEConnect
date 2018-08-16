@@ -7,7 +7,6 @@ With komoot BLE Connect, you enable your BLE device to show navigation instructi
 All you need to implement this is found here:
 
 - [How it works](#headerHowItWorks)
-- [The Simulator Apps](#headerSimulatorApps)
 - [BLE Service Specification](#headerBLESpecification)
 - [Transferred data](#headerData)  
 
@@ -46,18 +45,6 @@ The komoot app repeats the last navigation instruction every 2 seconds. It obser
 
 #### Your device / what you implement
 You have to start scanning for the navigation service once you detect the connection to the peripheral got lost. After a few seconds, the komoot app will start advertising.
-
-<a name="headerSimulatorApps"></a>
-## The Simulator Apps
-
-To make development easier for you, we created two simulator apps you can find in this repository. Just clone the repository and open the Xcode Project to start the simulators on your iOS device.
-
-**Note:** Set the signing team in the General tab, if you run the simulator apps with Xcode 8 or above.
-
-| KomootAppSimulator | BLEDeviceSimulator |
-|:---:|:---:|
-| <img src="assets/KomootAppSimulator.png" width="200" /> | <img src="assets/BLEDeviceSimulator.png" width="200" /> |
-| Simulates the behavior of the komoot app. (BLE Peripheral) | Simulates a BLE device that receives the BLE Navigation Service. (BLE Central) |
 
 <a name="headerBLESpecification"></a>
 ## BLE Service Specification
