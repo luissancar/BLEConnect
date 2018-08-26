@@ -3,6 +3,7 @@
 ## BLEConnect
 
 With komoot BLE Connect, you enable your BLE device to show navigation instructions for cycling, running and outdoor routes delivered by komoot Apps for Android and iOS. [https://www.komoot.com/b2b/connect](https://www.komoot.com/b2b/connect)
+For questions about partnerships and having your device listed in the komoot Apps please contact us: partner@komoot.de
 
 All you need to implement this is found here:
 
