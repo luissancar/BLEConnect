@@ -138,3 +138,9 @@ This is an example how we do rounding in the komoot app:
 |---|---|---|
 |0 - 5|0|Now|
 |6 - *|10|14 -> 10, 15 -> 20|
+
+### Testing
+
+#### Android
+Use a Android device with the Komoot App to test your BLE Navigation device. To simulate a location track use the Lockito App and start a Navigation with the Komoot App. Before that don't forgett to pair your device on Android OS and register it in the Komoot App.
+Once navigation is started navigation Instructions are sent by BLE Connect.
