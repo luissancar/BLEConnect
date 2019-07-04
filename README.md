@@ -18,6 +18,9 @@ All you need to implement this is found here:
 ### Connect to komoot App
 <div style="text-align:center"><img src="assets/BLE-Connect.png" width="673" /></div>
 
+### Pairing on Android (not iOS)
+Before a connection can be established, your external BLE device has to be paired (authorized) with the Android OS. Go to the Android Bluetooth settings and pair your device first.
+
 #### Komoot App
 The user activates BLE Connect inside the komoot app settings. When doing so, the app starts advertising the komoot navigation BLE service and tells the user to start pairing via their external BLE device.
 The komoot app stops advertising once the connection to the characteristic is established.
