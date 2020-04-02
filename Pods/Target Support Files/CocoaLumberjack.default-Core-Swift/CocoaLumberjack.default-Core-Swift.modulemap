@@ -1,6 +1,0 @@
-framework module CocoaLumberjack {
-  umbrella header "CocoaLumberjack.default-Core-Swift-umbrella.h"
-
-  export *
-  module * { export * }
-}

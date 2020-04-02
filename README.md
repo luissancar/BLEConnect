@@ -4,10 +4,11 @@
 
 With komoot BLE Connect, you enable your BLE device to show navigation instructions for cycling, running and outdoor routes delivered by komoot Apps for Android and iOS. [https://www.komoot.com/b2b/connect](https://www.komoot.com/b2b/connect)
 
+For questions about partnerships and having your device listed in the komoot Apps please contact us: partner@komoot.de
+
 All you need to implement this is found here:
 
 - [How it works](#headerHowItWorks)
-- [The Simulator Apps](#headerSimulatorApps)
 - [BLE Service Specification](#headerBLESpecification)
 - [Transferred data](#headerData)  
 
@@ -16,6 +17,9 @@ All you need to implement this is found here:
 
 ### Connect to komoot App
 <div style="text-align:center"><img src="assets/BLE-Connect.png" width="673" /></div>
+
+### Pairing on Android (not iOS)
+Before a connection can be established, your external BLE device has to be paired (authorized) with the Android OS. Go to the Android Bluetooth settings and pair your device first.
 
 #### Komoot App
 The user activates BLE Connect inside the komoot app settings. When doing so, the app starts advertising the komoot navigation BLE service and tells the user to start pairing via their external BLE device.
@@ -37,7 +41,7 @@ The komoot app sends instructions data about once per second when a navigation g
 #### Your device / what you implement
 The komoot app announces new data by updating a BLE characteristic. Once you receive a notification about the change, you have to start a read request on that characteristic to get the data object of the last navigation instruction.
 
-The komoot app delivers the first 22 Bytes with the first request. You can do subsequent read request with shifted offsets (22) to retrieve more information if the streetname is long. When the komoot app delivers an offset error or a zero-sized byte array you know that you got the complete Navigation Instruction.
+The komoot app delivers up to 22 bytes (iOS) or 20 bytes (Android) with the first response. You can do subsequent read request with shifted offsets (22 iOS, 20 Android) to retrieve more information like the rest of the street name if the street name is too long to fit into the first response. When the komoot app delivers less than 22 bytes (iOS) or 20 bytes (Android), or you get an offset error, or a zero-sized byte array you know that you got the complete Navigation Instruction.
 
 ### Reconnect and connection status
 
@@ -46,18 +50,6 @@ The komoot app repeats the last navigation instruction every 2 seconds. It obser
 
 #### Your device / what you implement
 You have to start scanning for the navigation service once you detect the connection to the peripheral got lost. After a few seconds, the komoot app will start advertising.
-
-<a name="headerSimulatorApps"></a>
-## The Simulator Apps
-
-To make development easier for you, we created two simulator apps you can find in this repository. Just clone the repository and open the Xcode Project to start the simulators on your iOS device.
-
-**Note:** Set the signing team in the General tab, if you run the simulator apps with Xcode 8 or above.
-
-| KomootAppSimulator | BLEDeviceSimulator |
-|:---:|:---:|
-| <img src="assets/KomootAppSimulator.png" width="200" /> | <img src="assets/BLEDeviceSimulator.png" width="200" /> |
-| Simulates the behavior of the komoot app. (BLE Peripheral) | Simulates a BLE device that receives the BLE Navigation Service. (BLE Central) |
 
 <a name="headerBLESpecification"></a>
 ## BLE Service Specification
@@ -149,3 +141,9 @@ This is an example how we do rounding in the komoot app:
 |---|---|---|
 |0 - 5|0|Now|
 |6 - *|10|14 -> 10, 15 -> 20|
+
+### Testing
+
+#### Android
+Use an Android device with the Komoot App to test your BLE Navigation device. To simulate a location track use the Lockito App and start a Navigation with the Komoot App. Before that don't forget to pair your device on Android OS and register it in the Komoot App.
+Once navigation is started navigation instructions are sent by BLE Connect.
