@@ -1,3 +1,5 @@
+# This documentation of komoot mobile apps BLEConnect interface is outdated. You can find the the most recent documentation linked on the komoot website [👉 here 👈](https://www.komoot.de/b2b/connect#bleconnect).
+
 ![](assets/Komoot-ble-github-header.png)
 
 ## BLEConnect
